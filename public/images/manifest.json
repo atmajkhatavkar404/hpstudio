@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-04-27T02:30:41.922Z",
+  "total": 12,
+  "categories": {
+    "baby": {
+      "albums": {},
+      "loose": [
+        "/images/baby/baby-shoot-AS9JeDcT.jpg"
+      ]
+    },
+    "events": {
+      "albums": {},
+      "loose": [
+        "/images/events/cafe-shoot-1tq1PQnd.jpg",
+        "/images/events/event-coverage-DvL_vBaW.jpg"
+      ]
+    },
+    "pre-wedding": {
+      "albums": {},
+      "loose": [
+        "/images/pre-wedding/hero-couple-08X6eT3G.jpg",
+        "/images/pre-wedding/pre-wedding-D9AyVlV8.jpg"
+      ]
+    },
+    "team": {
+      "albums": {},
+      "loose": [
+        "/images/team/team-abhi-CVjCTo_9.jpg",
+        "/images/team/team-hari-COBwqhv5.jpg"
+      ]
+    },
+    "wedding": {
+      "albums": {},
+      "loose": [
+        "/images/wedding/wedding-2-DVtaG-9p.jpg",
+        "/images/wedding/wedding-3-DNbq7QJY.jpg",
+        "/images/wedding/wedding-ceremony-IK_03SAI.jpg",
+        "/images/wedding/wedding-collage-CpdDKBNo.jpg",
+        "/images/wedding/wedding-couple-By2WaDyA.jpg"
+      ]
+    }
+  }
+}
