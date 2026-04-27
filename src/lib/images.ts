@@ -20,6 +20,7 @@ export type CategoryKey =
 
 export type Album = {
   photos: string[];
+  events?: Record<string, string[]>;
 };
 
 export type CategoryData = {
@@ -72,8 +73,16 @@ function normalizeManifest(raw: any): Manifest {
     } else if (val && typeof val === "object") {
       // NEW format: already { albums, loose }
       const v = val as any;
+      const albumsRecord: Record<string, Album> = {};
+      for (const [aKey, aVal] of Object.entries(v.albums ?? {})) {
+        const albumVal = aVal as any;
+        albumsRecord[aKey] = {
+          photos: albumVal.photos ?? [],
+          events: albumVal.events ?? {},
+        };
+      }
       cats[key as CategoryKey] = {
-        albums: v.albums ?? {},
+        albums: albumsRecord,
         loose: v.loose ?? [],
       };
     }
@@ -126,6 +135,11 @@ function getAllPhotos(catData: CategoryData): string[] {
   if (catData.albums) {
     for (const album of Object.values(catData.albums)) {
       if (album?.photos) all.push(...album.photos);
+      if (album?.events) {
+        for (const evPhotos of Object.values(album.events)) {
+          all.push(...evPhotos);
+        }
+      }
     }
   }
   if (catData.loose) all.push(...catData.loose);
@@ -162,14 +176,27 @@ export function getAlbums(manifest: Manifest, filterCat?: CategoryKey): AlbumInf
     // Named albums
     if (data.albums) {
       for (const [slug, album] of Object.entries(data.albums)) {
-        if (!album?.photos?.length) continue;
+        let totalCount = album?.photos?.length || 0;
+        let cover1 = album?.photos?.[0];
+        let cover2 = album?.photos?.[1];
+
+        if (album?.events) {
+          for (const evPhotos of Object.values(album.events)) {
+            totalCount += evPhotos.length;
+            if (!cover1) { cover1 = evPhotos[0]; cover2 = evPhotos[1]; }
+            else if (!cover2) { cover2 = evPhotos[0]; }
+          }
+        }
+        
+        if (!totalCount) continue;
+        
         albums.push({
           slug,
           category: cat,
           displayName: albumDisplayName(slug, cat),
-          cover: album.photos[0],
-          coverAlt: album.photos[1] ?? album.photos[0],
-          photoCount: album.photos.length,
+          cover: cover1 || "/placeholder.svg",
+          coverAlt: cover2 ?? cover1 ?? "/placeholder.svg",
+          photoCount: totalCount,
         });
       }
     }
@@ -190,18 +217,29 @@ export function getAlbums(manifest: Manifest, filterCat?: CategoryKey): AlbumInf
   return albums;
 }
 
-/* ─── Get photos for a specific album (with pagination support) ─── */
+/* ─── Get exact details for an album including events ─── */
+
+export function getAlbumDetails(manifest: Manifest, category: CategoryKey, albumSlug: string): Album | null {
+  const data = manifest.categories[category];
+  if (!data) return null;
+  if (albumSlug === "_highlights") return { photos: data.loose ?? [] };
+  return data.albums?.[albumSlug] ?? null;
+}
+
+/* ─── Get photos for a specific album (flat array) ─── */
 
 export function getAlbumPhotos(
   manifest: Manifest,
   category: CategoryKey,
   albumSlug: string,
 ): string[] {
-  const data = manifest.categories[category];
-  if (!data) return [];
-
-  if (albumSlug === "_highlights") return data.loose ?? [];
-  return data.albums?.[albumSlug]?.photos ?? [];
+  const details = getAlbumDetails(manifest, category, albumSlug);
+  if (!details) return [];
+  const all = [...(details.photos || [])];
+  if (details.events) {
+    for (const ev of Object.values(details.events)) all.push(...ev);
+  }
+  return all;
 }
 
 /* ─── Highlights per category (capped) — homepage reel ─── */
@@ -234,27 +272,24 @@ export function pickFromCategory(
   return getAllPhotos(data).slice(0, count);
 }
 
-/* ─── Pick N images across all public categories (round-robin) ─── */
-
-export function pickMixed(manifest: Manifest, count: number): string[] {
+/* ─── Get all photos across categories for Masonry Grid ─── */
+export function getAllMixedPhotos(manifest: Manifest, filterCat?: CategoryKey): string[] {
   const out: string[] = [];
   const lists = PUBLIC_CATEGORIES.map((cat) => {
+    if (filterCat && filterCat !== cat) return [];
     const data = manifest.categories[cat];
     return data ? getAllPhotos(data) : [];
   });
 
-  let i = 0;
-  while (out.length < count) {
-    let added = false;
+  // Calculate the maximum length among all lists to know when to stop
+  const maxLength = Math.max(...lists.map((l) => l.length));
+
+  for (let i = 0; i < maxLength; i++) {
     for (const list of lists) {
       if (list[i]) {
         out.push(list[i]);
-        added = true;
-        if (out.length >= count) break;
       }
     }
-    if (!added) break;
-    i++;
   }
   return out;
 }

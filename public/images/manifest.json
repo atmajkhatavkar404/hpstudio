@@ -1,26 +1,156 @@
 {
-  "generatedAt": "2026-04-27T02:30:41.922Z",
-  "total": 12,
+  "generatedAt": "2026-04-27T06:20:52.686Z",
+  "total": 106,
   "categories": {
     "baby": {
-      "albums": {},
-      "loose": [
-        "/images/baby/baby-shoot-AS9JeDcT.jpg"
-      ]
+      "albums": {
+        "aarav-sharma": {
+          "photos": [],
+          "events": {
+            "1st-birthday": [
+              "/images/baby/aarav-sharma/1st-birthday/photo-1.jpg"
+            ],
+            "cake-smash": [
+              "/images/baby/aarav-sharma/cake-smash/photo-1.jpg"
+            ],
+            "maternity": [
+              "/images/baby/aarav-sharma/maternity/photo-1.jpg"
+            ],
+            "newborn": [
+              "/images/baby/aarav-sharma/newborn/photo-1.jpg"
+            ]
+          }
+        },
+        "kiara-mehta": {
+          "photos": [],
+          "events": {
+            "1st-birthday": [
+              "/images/baby/kiara-mehta/1st-birthday/photo-1.jpg"
+            ],
+            "cake-smash": [
+              "/images/baby/kiara-mehta/cake-smash/photo-1.jpg"
+            ],
+            "maternity": [
+              "/images/baby/kiara-mehta/maternity/photo-1.jpg"
+            ],
+            "newborn": [
+              "/images/baby/kiara-mehta/newborn/photo-1.jpg"
+            ]
+          }
+        },
+        "little-reyaan": {
+          "photos": [],
+          "events": {
+            "1st-birthday": [
+              "/images/baby/little-reyaan/1st-birthday/photo-1.jpg"
+            ],
+            "cake-smash": [
+              "/images/baby/little-reyaan/cake-smash/photo-1.jpg"
+            ],
+            "maternity": [
+              "/images/baby/little-reyaan/maternity/photo-1.jpg"
+            ],
+            "newborn": [
+              "/images/baby/little-reyaan/newborn/photo-1.jpg"
+            ]
+          }
+        }
+      },
+      "loose": []
     },
     "events": {
-      "albums": {},
-      "loose": [
-        "/images/events/cafe-shoot-1tq1PQnd.jpg",
-        "/images/events/event-coverage-DvL_vBaW.jpg"
-      ]
+      "albums": {
+        "annual-meetup": {
+          "photos": [],
+          "events": {
+            "awards-night": [
+              "/images/events/annual-meetup/awards-night/photo-1.jpg",
+              "/images/events/annual-meetup/awards-night/photo-2.jpg"
+            ],
+            "conference": [
+              "/images/events/annual-meetup/conference/photo-1.jpg",
+              "/images/events/annual-meetup/conference/photo-2.jpg"
+            ],
+            "gala-dinner": [
+              "/images/events/annual-meetup/gala-dinner/photo-1.jpg",
+              "/images/events/annual-meetup/gala-dinner/photo-2.jpg"
+            ],
+            "team-building": [
+              "/images/events/annual-meetup/team-building/photo-1.jpg",
+              "/images/events/annual-meetup/team-building/photo-2.jpg"
+            ]
+          }
+        },
+        "startup-launch": {
+          "photos": [],
+          "events": {
+            "awards-night": [
+              "/images/events/startup-launch/awards-night/photo-1.jpg",
+              "/images/events/startup-launch/awards-night/photo-2.jpg"
+            ],
+            "conference": [
+              "/images/events/startup-launch/conference/photo-1.jpg",
+              "/images/events/startup-launch/conference/photo-2.jpg"
+            ],
+            "gala-dinner": [
+              "/images/events/startup-launch/gala-dinner/photo-1.jpg",
+              "/images/events/startup-launch/gala-dinner/photo-2.jpg"
+            ],
+            "team-building": [
+              "/images/events/startup-launch/team-building/photo-1.jpg",
+              "/images/events/startup-launch/team-building/photo-2.jpg"
+            ]
+          }
+        },
+        "tech-summit-2024": {
+          "photos": [],
+          "events": {
+            "awards-night": [
+              "/images/events/tech-summit-2024/awards-night/photo-1.jpg",
+              "/images/events/tech-summit-2024/awards-night/photo-2.jpg"
+            ],
+            "conference": [
+              "/images/events/tech-summit-2024/conference/photo-1.jpg",
+              "/images/events/tech-summit-2024/conference/photo-2.jpg"
+            ],
+            "gala-dinner": [
+              "/images/events/tech-summit-2024/gala-dinner/photo-1.jpg",
+              "/images/events/tech-summit-2024/gala-dinner/photo-2.jpg"
+            ],
+            "team-building": [
+              "/images/events/tech-summit-2024/team-building/photo-1.jpg",
+              "/images/events/tech-summit-2024/team-building/photo-2.jpg"
+            ]
+          }
+        }
+      },
+      "loose": []
     },
     "pre-wedding": {
-      "albums": {},
-      "loose": [
-        "/images/pre-wedding/hero-couple-08X6eT3G.jpg",
-        "/images/pre-wedding/pre-wedding-D9AyVlV8.jpg"
-      ]
+      "albums": {
+        "neha-vikas": {
+          "photos": [],
+          "events": {
+            "haldi": [
+              "/images/pre-wedding/neha-vikas/haldi/photo-1.jpg",
+              "/images/pre-wedding/neha-vikas/haldi/photo-2.jpg"
+            ],
+            "prewedding": [
+              "/images/pre-wedding/neha-vikas/prewedding/photo-1.jpg",
+              "/images/pre-wedding/neha-vikas/prewedding/photo-2.jpg"
+            ],
+            "reception": [
+              "/images/pre-wedding/neha-vikas/reception/photo-1.jpg",
+              "/images/pre-wedding/neha-vikas/reception/photo-2.jpg"
+            ],
+            "wedding": [
+              "/images/pre-wedding/neha-vikas/wedding/photo-1.jpg",
+              "/images/pre-wedding/neha-vikas/wedding/photo-2.jpg"
+            ]
+          }
+        }
+      },
+      "loose": []
     },
     "team": {
       "albums": {},
@@ -30,14 +160,108 @@
       ]
     },
     "wedding": {
-      "albums": {},
-      "loose": [
-        "/images/wedding/wedding-2-DVtaG-9p.jpg",
-        "/images/wedding/wedding-3-DNbq7QJY.jpg",
-        "/images/wedding/wedding-ceremony-IK_03SAI.jpg",
-        "/images/wedding/wedding-collage-CpdDKBNo.jpg",
-        "/images/wedding/wedding-couple-By2WaDyA.jpg"
-      ]
+      "albums": {
+        "ananya-rohit": {
+          "photos": [],
+          "events": {
+            "haldi": [
+              "/images/wedding/ananya-rohit/haldi/photo-1.jpg",
+              "/images/wedding/ananya-rohit/haldi/photo-2.jpg",
+              "/images/wedding/ananya-rohit/haldi/photo-3.jpg",
+              "/images/wedding/ananya-rohit/haldi/photo-4.jpg",
+              "/images/wedding/ananya-rohit/haldi/photo-5.jpg"
+            ],
+            "prewedding": [
+              "/images/wedding/ananya-rohit/prewedding/photo-1.jpg",
+              "/images/wedding/ananya-rohit/prewedding/photo-2.jpg",
+              "/images/wedding/ananya-rohit/prewedding/photo-3.jpg",
+              "/images/wedding/ananya-rohit/prewedding/photo-4.jpg",
+              "/images/wedding/ananya-rohit/prewedding/photo-5.jpg"
+            ],
+            "reception": [
+              "/images/wedding/ananya-rohit/reception/photo-1.jpg",
+              "/images/wedding/ananya-rohit/reception/photo-2.jpg",
+              "/images/wedding/ananya-rohit/reception/photo-3.jpg",
+              "/images/wedding/ananya-rohit/reception/photo-4.jpg",
+              "/images/wedding/ananya-rohit/reception/photo-5.jpg"
+            ],
+            "wedding": [
+              "/images/wedding/ananya-rohit/wedding/photo-1.jpg",
+              "/images/wedding/ananya-rohit/wedding/photo-2.jpg",
+              "/images/wedding/ananya-rohit/wedding/photo-3.jpg",
+              "/images/wedding/ananya-rohit/wedding/photo-4.jpg",
+              "/images/wedding/ananya-rohit/wedding/photo-5.jpg"
+            ]
+          }
+        },
+        "priya-karan": {
+          "photos": [],
+          "events": {
+            "haldi": [
+              "/images/wedding/priya-karan/haldi/photo-1.jpg",
+              "/images/wedding/priya-karan/haldi/photo-2.jpg",
+              "/images/wedding/priya-karan/haldi/photo-3.jpg",
+              "/images/wedding/priya-karan/haldi/photo-4.jpg",
+              "/images/wedding/priya-karan/haldi/photo-5.jpg"
+            ],
+            "prewedding": [
+              "/images/wedding/priya-karan/prewedding/photo-1.jpg",
+              "/images/wedding/priya-karan/prewedding/photo-2.jpg",
+              "/images/wedding/priya-karan/prewedding/photo-3.jpg",
+              "/images/wedding/priya-karan/prewedding/photo-4.jpg",
+              "/images/wedding/priya-karan/prewedding/photo-5.jpg"
+            ],
+            "reception": [
+              "/images/wedding/priya-karan/reception/photo-1.jpg",
+              "/images/wedding/priya-karan/reception/photo-2.jpg",
+              "/images/wedding/priya-karan/reception/photo-3.jpg",
+              "/images/wedding/priya-karan/reception/photo-4.jpg",
+              "/images/wedding/priya-karan/reception/photo-5.jpg"
+            ],
+            "wedding": [
+              "/images/wedding/priya-karan/wedding/photo-1.jpg",
+              "/images/wedding/priya-karan/wedding/photo-2.jpg",
+              "/images/wedding/priya-karan/wedding/photo-3.jpg",
+              "/images/wedding/priya-karan/wedding/photo-4.jpg",
+              "/images/wedding/priya-karan/wedding/photo-5.jpg"
+            ]
+          }
+        },
+        "snehal-rahul": {
+          "photos": [],
+          "events": {
+            "haldi": [
+              "/images/wedding/snehal-rahul/haldi/photo-1.jpg",
+              "/images/wedding/snehal-rahul/haldi/photo-2.jpg",
+              "/images/wedding/snehal-rahul/haldi/photo-3.jpg",
+              "/images/wedding/snehal-rahul/haldi/photo-4.jpg",
+              "/images/wedding/snehal-rahul/haldi/photo-5.jpg"
+            ],
+            "prewedding": [
+              "/images/wedding/snehal-rahul/prewedding/photo-1.jpg",
+              "/images/wedding/snehal-rahul/prewedding/photo-2.jpg",
+              "/images/wedding/snehal-rahul/prewedding/photo-3.jpg",
+              "/images/wedding/snehal-rahul/prewedding/photo-4.jpg",
+              "/images/wedding/snehal-rahul/prewedding/photo-5.jpg"
+            ],
+            "reception": [
+              "/images/wedding/snehal-rahul/reception/photo-1.jpg",
+              "/images/wedding/snehal-rahul/reception/photo-2.jpg",
+              "/images/wedding/snehal-rahul/reception/photo-3.jpg",
+              "/images/wedding/snehal-rahul/reception/photo-4.jpg",
+              "/images/wedding/snehal-rahul/reception/photo-5.jpg"
+            ],
+            "wedding": [
+              "/images/wedding/snehal-rahul/wedding/photo-1.jpg",
+              "/images/wedding/snehal-rahul/wedding/photo-2.jpg",
+              "/images/wedding/snehal-rahul/wedding/photo-3.jpg",
+              "/images/wedding/snehal-rahul/wedding/photo-4.jpg",
+              "/images/wedding/snehal-rahul/wedding/photo-5.jpg"
+            ]
+          }
+        }
+      },
+      "loose": []
     }
   }
 }

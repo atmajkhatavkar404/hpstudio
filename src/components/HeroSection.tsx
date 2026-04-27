@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useManifest } from "../lib/useManifest";
-import { pickMixed } from "../lib/images";
+import { getAllMixedPhotos } from "../lib/images";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +11,7 @@ const FALLBACK = ["/placeholder.svg"];
 export default function HeroSection() {
   const manifest = useManifest();
   const heroImages = useMemo(() => {
-    const imgs = pickMixed(manifest, 3);
+    const imgs = getAllMixedPhotos(manifest).slice(0, 3);
     return imgs.length ? imgs : FALLBACK;
   }, [manifest]);
   const [current, setCurrent] = useState(0);

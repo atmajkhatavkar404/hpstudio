@@ -12,6 +12,7 @@ import {
   CATEGORY_LABELS,
   PUBLIC_CATEGORIES,
   getAlbums,
+  getAllMixedPhotos,
   type CategoryKey,
   type AlbumInfo,
 } from "../../lib/images";
@@ -30,6 +31,11 @@ export default function PortfolioPage() {
     return getAlbums(manifest, filterCat);
   }, [manifest, active]);
 
+  const displayPhotos = useMemo(() => {
+    const filterCat = active === "All" ? undefined : active;
+    return getAllMixedPhotos(manifest, filterCat).slice(0, 32); // Max 32 for the bento grid display
+  }, [manifest, active]);
+
   useEffect(() => {
     if (gridRef.current && albums.length) {
       gsap.fromTo(
@@ -38,7 +44,26 @@ export default function PortfolioPage() {
         { opacity: 1, scale: 1, y: 0, duration: 0.6, stagger: 0.06, ease: "power3.out" },
       );
     }
-  }, [active, albums.length]);
+    // Also animate the bento grid items if any exist
+    const bentoItems = document.querySelectorAll(".bento-item");
+    if (bentoItems.length > 0) {
+      gsap.fromTo(
+        bentoItems,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.04,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".bento-grid",
+            start: "top 80%",
+          },
+        }
+      );
+    }
+  }, [active, albums.length, displayPhotos.length]);
 
   const filters: Filter[] = ["All", ...PUBLIC_CATEGORIES];
 
@@ -81,8 +106,8 @@ export default function PortfolioPage() {
       </section>
 
       {/* Album grid */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-20 md:pb-28">
-        <div ref={gridRef} className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+        <div ref={gridRef} className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {albums.map((album) => (
             <AlbumCard key={`${album.category}-${album.slug}`} album={album} />
           ))}
@@ -101,6 +126,42 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* Bento Box Photo Grid */}
+      {displayPhotos.length > 0 && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-20 md:pb-28">
+          <div className="bento-grid max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 auto-rows-[250px] md:auto-rows-[300px]">
+            {displayPhotos.map((photo, i) => {
+              const index = i % 16;
+              let spanClass = "col-span-1 row-span-1";
+              
+              if (index === 8 || index === 9) {
+                spanClass = "col-span-2 row-span-1";
+              } else if (index >= 10 && index < 14) {
+                spanClass = "col-span-1 row-span-1";
+              } else if (index >= 14) {
+                spanClass = "col-span-2 row-span-2";
+              }
+
+              return (
+                <div 
+                  key={photo + i} 
+                  className={`bento-item overflow-hidden bg-neutral-200 relative group ${spanClass}`}
+                >
+                  <img
+                    src={photo}
+                    alt={`Portfolio image ${i}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                  />
+                  {/* Subtle overlay on hover */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       <Footer />
       <WhatsAppButton />
     </div>
@@ -113,62 +174,49 @@ function AlbumCard({ album }: { album: AlbumInfo }) {
   return (
     <Link
       href={`/story/${album.category}/${album.slug}`}
-      className="album-card group relative overflow-hidden rounded-2xl cursor-pointer block"
+      className="album-card group relative overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer block aspect-[4/3] md:aspect-[3/2]"
       style={{ boxShadow: "0 12px 40px -15px rgba(0,0,0,0.2)" }}
     >
       {/* Cover collage: two images side by side */}
-      <div className="relative aspect-[4/3] overflow-hidden">
-        {album.cover !== album.coverAlt ? (
-          <div className="flex h-full">
-            <div className="w-1/2 h-full overflow-hidden">
-              <img
-                src={album.cover}
-                alt={album.displayName}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
-            <div className="w-1/2 h-full overflow-hidden border-l-2" style={{ borderColor: "#faf5eb" }}>
-              <img
-                src={album.coverAlt}
-                alt={album.displayName}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
+      {album.cover !== album.coverAlt ? (
+        <div className="flex w-full h-full">
+          <div className="w-1/2 h-full overflow-hidden">
+            <img
+              src={album.cover}
+              alt={album.displayName}
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
           </div>
-        ) : (
-          <img
-            src={album.cover}
-            alt={album.displayName}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-        )}
+          <div className="w-1/2 h-full overflow-hidden border-l border-white/20">
+            <img
+              src={album.coverAlt}
+              alt={album.displayName}
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+        </div>
+      ) : (
+        <img
+          src={album.cover}
+          alt={album.displayName}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+      )}
 
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300" />
+      {/* Dark gradient overlay covering whole card smoothly */}
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-500 ease-out" />
 
-        {/* Photo count badge */}
-        <div
-          className="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] tracking-wider font-semibold uppercase"
-          style={{ backgroundColor: "rgba(0,0,0,0.5)", color: "white", backdropFilter: "blur(4px)" }}
+      {/* Centered Album name (Replaces bottom text) */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 pointer-events-none">
+        <h3
+          className="text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg tracking-wide transition-transform duration-500 group-hover:scale-105"
+          style={{ fontFamily: "var(--font-family-playfair)" }}
         >
-          {album.photoCount} Photos
-        </div>
-
-        {/* Album name */}
-        <div className="absolute bottom-0 left-0 right-0 p-5">
-          <p className="text-xs tracking-[0.2em] uppercase mb-1" style={{ color: "#d4a843" }}>
-            {CATEGORY_LABELS[album.category]}
-          </p>
-          <h3
-            className="text-xl md:text-2xl font-bold text-white"
-            style={{ fontFamily: "var(--font-family-playfair)" }}
-          >
-            {album.displayName}
-          </h3>
-        </div>
+          {album.displayName}
+        </h3>
       </div>
     </Link>
   );

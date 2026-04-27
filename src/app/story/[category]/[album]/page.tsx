@@ -12,7 +12,7 @@ import {
   CATEGORY_LABELS,
   PUBLIC_CATEGORIES,
   IMAGES_PER_PAGE,
-  getAlbumPhotos,
+  getAlbumDetails,
   albumDisplayName,
   type CategoryKey,
 } from "../../../../lib/images";
@@ -24,10 +24,29 @@ export default function StoryPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const allPhotos = useMemo(
-    () => getAlbumPhotos(manifest, cat, album),
-    [manifest, cat, album],
-  );
+  const albumDetails = useMemo(() => getAlbumDetails(manifest, cat, album), [manifest, cat, album]);
+  const [activeEvent, setActiveEvent] = useState<string>("All");
+
+  const eventsList = useMemo(() => {
+    if (!albumDetails?.events) return [];
+    return Object.keys(albumDetails.events);
+  }, [albumDetails]);
+
+  const allPhotos = useMemo(() => {
+    if (!albumDetails) return [];
+    const photos: string[] = [];
+    if (activeEvent === "All") {
+      photos.push(...(albumDetails.photos || []));
+      if (albumDetails.events) {
+        for (const evphotos of Object.values(albumDetails.events)) {
+          photos.push(...evphotos);
+        }
+      }
+    } else if (albumDetails.events && albumDetails.events[activeEvent]) {
+      photos.push(...albumDetails.events[activeEvent]);
+    }
+    return photos;
+  }, [albumDetails, activeEvent]);
 
   const [page, setPage] = useState(1);
   const visiblePhotos = useMemo(
@@ -39,7 +58,16 @@ export default function StoryPage() {
   const displayName = useMemo(() => albumDisplayName(album, cat), [album, cat]);
 
   // Hero cover photos (up to 4 for the collage)
-  const heroPhotos = useMemo(() => allPhotos.slice(0, 4), [allPhotos]);
+  const heroPhotos = useMemo(() => {
+    if (!albumDetails) return [];
+    const photos = [...(albumDetails.photos || [])];
+    if (albumDetails.events) {
+      for (const evphotos of Object.values(albumDetails.events)) {
+        photos.push(...evphotos);
+      }
+    }
+    return photos.slice(0, 4);
+  }, [albumDetails]);
 
   // GSAP animations
   useEffect(() => {
@@ -91,14 +119,14 @@ export default function StoryPage() {
               ))}
             </div>
             {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
             {/* Album name overlay */}
-            <div ref={heroRef} className="absolute bottom-0 left-0 right-0 text-center pb-10 md:pb-14 px-4">
+            <div ref={heroRef} className="absolute bottom-0 left-0 right-0 text-center pb-10 md:pb-12 px-4 flex flex-col items-center">
               <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-2" style={{ color: "#d4a843" }}>
                 {CATEGORY_LABELS[cat] ?? category}
               </p>
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
                 style={{ fontFamily: "var(--font-family-playfair)" }}
               >
                 {displayName.includes("&") ? (
@@ -111,8 +139,30 @@ export default function StoryPage() {
                   displayName
                 )}
               </h1>
-              <p className="mt-2 text-white/60 text-sm">
-                {allPhotos.length} photos
+              
+              {/* ─── Events Filter (Overlaid on Image) ─── */}
+              {eventsList.length > 0 && (
+                <div className="flex flex-wrap justify-center gap-3 mt-4 mb-2 relative z-20">
+                  {["All", ...eventsList].map((ev) => (
+                    <button
+                      key={ev}
+                      onClick={() => { setActiveEvent(ev); setPage(1); }}
+                      className="px-5 py-2 tracking-widest text-[10px] md:text-xs font-semibold uppercase rounded-full border transition-all duration-300 hover:scale-105"
+                      style={{
+                        borderColor: activeEvent === ev ? "#d4a843" : "rgba(255,255,255,0.3)",
+                        backgroundColor: activeEvent === ev ? "#d4a843" : "rgba(0,0,0,0.4)",
+                        color: activeEvent === ev ? "#0d0d0d" : "white",
+                        backdropFilter: "blur(8px)"
+                      }}
+                    >
+                      {ev === "All" ? "All Photos" : ev.replace(/-/g, " ")}
+                    </button>
+                  ))}
+                </div>
+              )}
+              
+              <p className="mt-4 text-white/70 text-xs md:text-sm tracking-widest">
+                {allPhotos.length} TOTAL PHOTOS
               </p>
             </div>
           </div>
@@ -131,28 +181,8 @@ export default function StoryPage() {
         )}
       </section>
 
-      {/* ─── Category Tabs (navigation) ─── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-        <div className="flex flex-wrap justify-center gap-3">
-          {PUBLIC_CATEGORIES.map((c) => (
-            <Link
-              key={c}
-              href="/portfolio"
-              className="px-5 py-2 text-sm tracking-wider rounded-full border transition-all duration-300"
-              style={{
-                borderColor: c === cat ? "#d4a843" : "rgba(13,13,13,0.2)",
-                backgroundColor: c === cat ? "#d4a843" : "transparent",
-                color: c === cat ? "#0d0d0d" : "#555",
-              }}
-            >
-              {CATEGORY_LABELS[c]}
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* ─── Photo Grid with Load More ─── */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
+      <section className="px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 pt-8">
         <div
           ref={gridRef}
           className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"

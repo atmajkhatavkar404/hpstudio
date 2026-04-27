@@ -2,14 +2,14 @@ import { useMemo, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useManifest } from "../lib/useManifest";
-import { pickMixed } from "../lib/images";
+import { getAllMixedPhotos } from "../lib/images";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function InstagramSection() {
   const manifest = useManifest();
   const items = useMemo(() => {
-    const srcs = pickMixed(manifest, 4);
+    const srcs = getAllMixedPhotos(manifest).slice(0, 4);
     const labels = ["Bridal Glow", "Pre-Wedding", "Tiny Moments", "Celebrations"];
     return srcs.map((src, i) => ({ src, label: labels[i] ?? "Moments" }));
   }, [manifest]);

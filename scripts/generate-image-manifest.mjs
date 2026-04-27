@@ -2,12 +2,13 @@
 /**
  * Scans public/images/<category>/ and writes public/images/manifest.json.
  *
- * Supports TWO levels:
- *   public/images/wedding/photo.jpg          → "loose" photo in wedding category
- *   public/images/wedding/pream-radha/01.jpg → album "pream-radha" in wedding
+ * Supports THREE levels:
+ *   public/images/wedding/photo.jpg                       → "loose" photo in wedding category
+ *   public/images/wedding/snehal-rahul/01.jpg             → album "snehal-rahul" loose photo
+ *   public/images/wedding/snehal-rahul/haldi/01.jpg       → event "haldi" photo inside album
  *
  * Run manually:   node scripts/generate-image-manifest.mjs
- * Run via bun:    bun run images:manifest
+ * Run via npm:    npm run images:manifest
  *
  * Designed to handle 8,000+ images efficiently.
  */
@@ -38,14 +39,33 @@ for (const catName of readdirSync(ROOT)) {
 
     if (statSync(entryPath).isDirectory()) {
       // This is an album sub-directory
-      const photos = readdirSync(entryPath)
-        .filter((f) => VALID.test(f))
-        .sort()
-        .map((f) => `/images/${catName}/${entry}/${f}`);
+      const albumData = { photos: [], events: {} };
 
-      if (photos.length) {
-        albums[entry] = { photos };
-        total += photos.length;
+      for (const albumEntry of readdirSync(entryPath)) {
+        const albumEntryPath = join(entryPath, albumEntry);
+
+        if (statSync(albumEntryPath).isDirectory()) {
+          // This is an EVENT sub-directory (e.g. haldi, wedding)
+          const eventPhotos = readdirSync(albumEntryPath)
+            .filter((f) => VALID.test(f))
+            .sort()
+            .map((f) => `/images/${catName}/${entry}/${albumEntry}/${f}`);
+
+          if (eventPhotos.length) {
+            albumData.events[albumEntry] = eventPhotos;
+            total += eventPhotos.length;
+          }
+        } else if (VALID.test(albumEntry)) {
+          // Loose image inside the album directory
+          albumData.photos.push(`/images/${catName}/${entry}/${albumEntry}`);
+          total++;
+        }
+      }
+
+      albumData.photos.sort();
+
+      if (albumData.photos.length || Object.keys(albumData.events).length) {
+        albums[entry] = albumData;
       }
     } else if (VALID.test(entry)) {
       // Loose image file directly in category
@@ -67,7 +87,13 @@ writeFileSync(OUT, JSON.stringify(manifest, null, 2));
 console.log(`✓ Wrote ${OUT}`);
 console.log(`  ${total} images across ${Object.keys(categories).length} categories`);
 for (const [cat, data] of Object.entries(categories)) {
-  const albumCount = Object.keys(data.albums).length;
-  const albumPhotos = Object.values(data.albums).reduce((s, a) => s + a.photos.length, 0);
+  let albumCount = Object.keys(data.albums).length;
+  let albumPhotos = 0;
+  for (const album of Object.values(data.albums)) {
+    albumPhotos += album.photos.length;
+    for (const ev of Object.values(album.events)) {
+      albumPhotos += ev.length;
+    }
+  }
   console.log(`    ${cat}: ${data.loose.length} loose, ${albumCount} albums (${albumPhotos} photos)`);
 }
