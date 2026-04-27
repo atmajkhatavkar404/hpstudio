@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1">
-            <span className="font-bold text-xl md:text-2xl tracking-wider" style={{ fontFamily: "var(--font-family-poppins)" }}>
+            <span className="font-bold text-xl md:text-2xl tracking-wider" style={{ fontFamily: "var(--font-family-playfair)" }}>
               <span className="text-white">HP </span>
               <span style={{ color: "#d4a843" }}>STUDIO</span>
             </span>

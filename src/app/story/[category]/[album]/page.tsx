@@ -159,7 +159,7 @@ export default function StoryPage() {
                 {displayName.includes("&") ? (
                   <>
                     {displayName.split("&")[0].trim()}{" "}
-                    <span className="italic" style={{ color: "#d4a843" }}>&</span>{" "}
+                    <span className="" style={{ color: "#d4a843" }}>&</span>{" "}
                     {displayName.split("&")[1]?.trim()}
                   </>
                 ) : (

@@ -51,7 +51,7 @@ export default function InstagramSection() {
             style={{ fontFamily: "var(--font-family-playfair)" }}
           >
             <span className="text-white">On </span>
-            <span className="italic" style={{ color: "#d4a843" }}>Instagram</span>
+            <span className="" style={{ color: "#d4a843" }}>Instagram</span>
           </h2>
           <a
             href="https://instagram.com/hp_studio_07"

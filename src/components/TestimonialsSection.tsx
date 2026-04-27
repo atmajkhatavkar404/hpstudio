@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
             style={{ fontFamily: "var(--font-family-playfair)" }}
           >
             <span style={{ color: "#0d0d0d" }}>What Our </span>
-            <span className="italic" style={{ color: "#d4a843" }}>Clients</span>
+            <span className="" style={{ color: "#d4a843" }}>Clients</span>
             <span style={{ color: "#0d0d0d" }}> Say</span>
           </h2>
         </div>
@@ -96,7 +96,7 @@ export default function TestimonialsSection() {
               ))}
             </div>
 
-            <p className="text-base md:text-lg italic leading-relaxed mb-6" style={{ fontFamily: "var(--font-family-playfair)", color: "#333" }}>
+            <p className="text-base md:text-lg leading-relaxed mb-6" style={{ fontFamily: "var(--font-family-poppins)", color: "#333" }}>
               "{t.text}"
             </p>
 
@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
               <div className="w-11 h-11 rounded-full flex items-center justify-center text-base font-bold" style={{ backgroundColor: "#d4a843", color: "#0d0d0d" }}>
                 {t.initial}
               </div>
-              <span className="text-lg italic" style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}>
+              <span className="text-lg" style={{ fontFamily: "var(--font-family-poppins)", color: "#0d0d0d" }}>
                 {t.name}
               </span>
             </div>

@@ -74,7 +74,7 @@ export default function PortfolioSection() {
           </p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold" style={{ fontFamily: "var(--font-family-playfair)" }}>
             <span className="text-white">Professional </span>
-            <span className="italic" style={{ color: "#d4a843" }}>Portfolio</span>
+            <span className="" style={{ color: "#d4a843" }}>Portfolio</span>
           </h2>
         </div>
 
@@ -105,9 +105,9 @@ export default function PortfolioSection() {
         <a
           href="/portfolio"
           className="inline-block px-8 py-3 text-sm tracking-[0.15em] font-semibold border-2 rounded-sm transition-all duration-300"
-          style={{ borderColor: "#d4a843", color: "#d4a843" }}
-          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#d4a843"; e.currentTarget.style.color = "#0d0d0d"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "#d4a843"; }}
+          style={{ borderColor: "white", color: "white" }}
+          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "white"; e.currentTarget.style.color = "#0d0d0d"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "white"; }}
         >
           Show More Work
         </a>

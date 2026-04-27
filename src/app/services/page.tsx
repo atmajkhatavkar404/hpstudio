@@ -113,7 +113,7 @@ const services = [
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
           style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
         >
-          Our Service <span className="italic" style={{ color: "#d4a843" }}>&</span> Pricing
+          Our Service <span className="" style={{ color: "#d4a843" }}>&</span> Pricing
         </h1>
         <p className="mt-4 max-w-xl mx-auto text-sm md:text-base" style={{ color: "#555" }}>
           Cinematic packages tailored to your story. Tap any card to enquire.

@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16 mb-10">
           {/* Brand */}
           <div>
-            <h3 className="text-xl md:text-2xl font-bold mb-4" style={{ fontFamily: "var(--font-family-poppins)" }}>
+            <h3 className="text-xl md:text-2xl font-bold mb-4" style={{ fontFamily: "var(--font-family-playfair)" }}>
               <span className="text-white">HP </span>
               <span style={{ color: "#d4a843" }}>STUDIO</span>
             </h3>

@@ -80,7 +80,7 @@ export default function PortfolioPage() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
           style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
         >
-          HP Studio <span className="italic" style={{ color: "#d4a843" }}>Portfolio</span>
+          HP Studio <span className="" style={{ color: "#d4a843" }}>Portfolio</span>
         </h1>
         <p className="mt-4 text-sm text-neutral-600 max-w-xl mx-auto">
           {manifest.total} photos across {albums.length} stories. Click any story to explore the full gallery.

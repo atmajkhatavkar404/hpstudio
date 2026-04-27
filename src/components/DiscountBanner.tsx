@@ -10,9 +10,9 @@ export default function DiscountBanner() {
   useEffect(() => {
     if (!bannerRef.current) return;
     const ctx = gsap.context(() => {
-      gsap.fromTo(bannerRef.current, { scale: 0.92, opacity: 0.6 }, {
-        scale: 1, opacity: 1, ease: "none",
-        scrollTrigger: { trigger: bannerRef.current, start: "top 85%", end: "top 40%", scrub: true },
+      gsap.fromTo(bannerRef.current, { opacity: 0, y: 20 }, {
+        opacity: 1, y: 0, duration: 0.6, ease: "power3.out",
+        scrollTrigger: { trigger: bannerRef.current, start: "top 85%", end: "top 60%", scrub: true },
       });
     });
     return () => ctx.revert();
@@ -21,22 +21,19 @@ export default function DiscountBanner() {
   return (
     <section
       ref={bannerRef}
-      className="mx-4 md:mx-8 my-6 md:my-10 rounded-lg px-4 py-3 md:py-4 gold-gradient will-change-transform flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-center shadow-lg"
+      className="mx-4 md:mx-8 my-8 px-4 py-3 md:py-4 text-center gold-gradient will-change-transform rounded-lg flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4"
     >
-      <p className="text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase whitespace-nowrap" style={{ color: "#0d0d0d" }}>
+      <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase" style={{ color: "#0d0d0d" }}>
         Limited Time Offer
-      </p>
-      <div className="hidden md:block w-px h-6 bg-black/20" />
-      <h3
-        className="text-sm md:text-base font-bold whitespace-nowrap"
-        style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
-      >
+      </span>
+      <span className="hidden sm:inline text-[#0d0d0d]/40">|</span>
+      <span className="text-sm md:text-base font-semibold" style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}>
         Get 10% Discount on Your First Shoot
-      </h3>
-      <div className="hidden md:block w-px h-6 bg-black/20" />
-      <p className="text-[10px] md:text-xs opacity-90 tracking-wide font-medium" style={{ color: "#0d0d0d" }}>
-        Book today and save on premium photography services
-      </p>
+      </span>
+      <span className="hidden sm:inline text-[#0d0d0d]/40">|</span>
+      <span className="text-xs md:text-sm" style={{ color: "#0d0d0d" }}>
+        Book today &amp; save on premium photography
+      </span>
     </section>
   );
 }

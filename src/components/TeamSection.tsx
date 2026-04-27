@@ -52,7 +52,7 @@ export default function TeamSection() {
           style={{ fontFamily: "var(--font-family-playfair)" }}
         >
           <span style={{ color: "#0d0d0d" }}>Our </span>
-          <span className="italic" style={{ color: "#d4a843" }}>Team</span>
+          <span className="" style={{ color: "#d4a843" }}>Team</span>
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-12 md:gap-20">

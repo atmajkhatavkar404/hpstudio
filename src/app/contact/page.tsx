@@ -75,7 +75,7 @@ export default function ContactPage() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
             style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
           >
-            Contact <span className="italic" style={{ color: "#d4a843" }}>HP Studio</span>
+            Contact <span className="" style={{ color: "#d4a843" }}>HP Studio</span>
           </h1>
           <p className="mt-4 text-sm md:text-base text-neutral-600 max-w-xl mx-auto">
             We'd love to hear from you. Reach out to book a session, ask a question,
@@ -200,7 +200,7 @@ export default function ContactPage() {
               className="text-2xl md:text-3xl font-bold mb-2"
               style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
             >
-              Send an <span className="italic" style={{ color: "#d4a843" }}>Enquiry</span>
+              Send an <span className="" style={{ color: "#d4a843" }}>Enquiry</span>
             </h2>
             <p className="text-sm mb-6" style={{ color: "#999" }}>
               Fill in the form and we'll get back to you on WhatsApp.
@@ -349,7 +349,7 @@ export default function ContactPage() {
                 style={{ fontFamily: "var(--font-family-playfair)" }}
               >
                 <span className="text-white">Working </span>
-                <span className="italic" style={{ color: "#d4a843" }}>Hours</span>
+                <span className="" style={{ color: "#d4a843" }}>Hours</span>
               </h3>
 
               <div className="space-y-3">

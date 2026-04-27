@@ -142,7 +142,7 @@ export default function CTASection() {
             >
               <span style={{ color: "#0d0d0d" }}>Create memories that</span>
               <br />
-              <span className="italic" style={{ color: "#d4a843" }}>
+              <span className="" style={{ color: "#d4a843" }}>
                 last forever
               </span>
             </h2>

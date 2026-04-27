@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
               style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
             >
-              Meet <span className="italic" style={{ color: "#d4a843" }}>HP Studio</span>
+              Meet <span className="" style={{ color: "#d4a843" }}>HP Studio</span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed" style={{ color: "#444" }}>
               At HP Studio, photography is more than just pictures — it's about

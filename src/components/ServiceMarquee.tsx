@@ -9,13 +9,13 @@ const services = [
 export default function ServiceMarquee() {
   const repeated = [...services, ...services, ...services];
   return (
-    <section id="services" className="py-6 overflow-hidden" style={{ backgroundColor: "#0d0d0d" }}>
+    <section id="services" className="py-6 overflow-hidden" style={{ backgroundColor: "#f5f5dc" }}>
       <div className="flex animate-marquee whitespace-nowrap">
         {repeated.map((service, i) => (
           <span
             key={i}
             className="inline-flex items-center mx-4 md:mx-6 text-sm md:text-base tracking-wider uppercase font-medium"
-            style={{ color: "#d4a843" }}
+            style={{ color: "#000000" }}
           >
             <span className="mr-4 md:mr-6">•</span>
             {service}
