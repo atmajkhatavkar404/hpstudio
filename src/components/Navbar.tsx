@@ -1,14 +1,18 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "HOME", to: "/" as const },
-  { label: "PORTFOLIO", to: "/portfolio" as const },
-  { label: "SERVICES", to: "/services" as const },
-  { label: "CONTACT", to: "/contact" as const },
+  { label: "HOME", href: "/" },
+  { label: "PORTFOLIO", href: "/portfolio" },
+  { label: "SERVICES", href: "/services" },
+  { label: "CONTACT", href: "/contact" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -26,7 +30,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-1">
             <span className="font-bold text-xl md:text-2xl tracking-wider" style={{ fontFamily: "var(--font-family-poppins)" }}>
               <span className="text-white">HP </span>
               <span style={{ color: "#d4a843" }}>STUDIO</span>
@@ -38,10 +42,9 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.label}
-                to={link.to}
+                href={link.href}
                 className="text-white/80 hover:text-white text-sm tracking-[0.15em] font-medium transition-colors duration-200"
-                activeProps={{ style: { color: "#d4a843" } }}
-                activeOptions={{ exact: link.to === "/" }}
+                style={{ color: pathname === link.href ? "#d4a843" : undefined }}
               >
                 {link.label}
               </Link>
@@ -85,9 +88,10 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.label}
-                to={link.to}
+                href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="text-white/80 hover:text-white text-base tracking-[0.15em] font-medium touch-friendly"
+                style={{ color: pathname === link.href ? "#d4a843" : undefined }}
               >
                 {link.label}
               </Link>
