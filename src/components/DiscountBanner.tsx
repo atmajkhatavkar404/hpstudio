@@ -19,17 +19,22 @@ export default function DiscountBanner() {
   }, []);
 
   return (
-    <section ref={bannerRef} className="mx-4 md:mx-8 my-8 rounded-xl px-6 py-10 md:py-14 text-center gold-gradient will-change-transform">
-      <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-3" style={{ color: "#0d0d0d" }}>
+    <section
+      ref={bannerRef}
+      className="mx-4 md:mx-8 my-6 md:my-10 rounded-lg px-4 py-3 md:py-4 gold-gradient will-change-transform flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-center shadow-lg"
+    >
+      <p className="text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase whitespace-nowrap" style={{ color: "#0d0d0d" }}>
         Limited Time Offer
       </p>
+      <div className="hidden md:block w-px h-6 bg-black/20" />
       <h3
-        className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3"
+        className="text-sm md:text-base font-bold whitespace-nowrap"
         style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
       >
         Get 10% Discount on Your First Shoot
       </h3>
-      <p className="text-sm md:text-base" style={{ color: "#0d0d0d" }}>
+      <div className="hidden md:block w-px h-6 bg-black/20" />
+      <p className="text-[10px] md:text-xs opacity-90 tracking-wide font-medium" style={{ color: "#0d0d0d" }}>
         Book today and save on premium photography services
       </p>
     </section>
