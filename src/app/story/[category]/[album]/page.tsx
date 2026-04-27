@@ -4,7 +4,10 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState, useEffect, useRef, useMemo } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../../../../components/Navbar";
+
+gsap.registerPlugin(ScrollTrigger);
 import Footer from "../../../../components/Footer";
 import WhatsAppButton from "../../../../components/WhatsAppButton";
 import { useManifest } from "../../../../lib/useManifest";
@@ -22,6 +25,8 @@ export default function StoryPage() {
   const manifest = useManifest();
   const cat = category as CategoryKey;
   const heroRef = useRef<HTMLDivElement>(null);
+  const heroBgRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
   const albumDetails = useMemo(() => getAlbumDetails(manifest, cat, album), [manifest, cat, album]);
@@ -80,6 +85,28 @@ export default function StoryPage() {
     }
   }, []);
 
+  // Parallax Scroll Effect for Hero Background
+  useEffect(() => {
+    if (!sectionRef.current || !heroBgRef.current) return;
+    
+    const ctx = gsap.context(() => {
+      gsap.to(heroBgRef.current, {
+        yPercent: 20,
+        scale: 1.15,
+        transformOrigin: "center center",
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   useEffect(() => {
     if (gridRef.current && visiblePhotos.length) {
       const cards = gridRef.current.querySelectorAll(".photo-card");
@@ -104,10 +131,10 @@ export default function StoryPage() {
       <Navbar />
 
       {/* ─── Hero Collage ─── */}
-      <section className="pt-20 md:pt-24">
+      <section ref={sectionRef} className="pt-20 md:pt-24 relative">
         {heroPhotos.length >= 2 ? (
           <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
-            <div className="flex h-full">
+            <div ref={heroBgRef} className="flex h-full will-change-transform" style={{ height: "120%" }}>
               {heroPhotos.slice(0, 2).map((src, i) => (
                 <div key={src} className="flex-1 overflow-hidden" style={i === 0 ? { borderRight: "3px solid #faf5eb" } : {}}>
                   <img

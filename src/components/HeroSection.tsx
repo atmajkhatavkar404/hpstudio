@@ -43,10 +43,12 @@ export default function HeroSection() {
   useEffect(() => {
     if (!sectionRef.current || !bgRef.current || !textRef.current) return;
 
-    const ctx = gsap.context(() => {
-      // Background moves down slower (parallax depth effect)
+      const ctx = gsap.context(() => {
+      // Background moves down slower + gradually zooms in
       gsap.to(bgRef.current, {
         yPercent: 25,
+        scale: 1.15,
+        transformOrigin: "center center",
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
