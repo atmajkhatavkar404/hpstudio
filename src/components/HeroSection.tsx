@@ -44,10 +44,10 @@ export default function HeroSection() {
     if (!sectionRef.current || !bgRef.current || !textRef.current) return;
 
       const ctx = gsap.context(() => {
-      // Background moves down slower + gradually zooms in
+      // Background gradually zooms in, scaling smoothly on scroll without leaking edges
       gsap.to(bgRef.current, {
-        yPercent: 25,
         scale: 1.15,
+        yPercent: 5,
         transformOrigin: "center center",
         ease: "none",
         scrollTrigger: {
@@ -78,7 +78,7 @@ export default function HeroSection() {
   return (
     <section ref={sectionRef} id="home" className="relative h-screen w-full overflow-hidden">
       {/* Background images — parallax container */}
-      <div ref={bgRef} className="absolute inset-0 will-change-transform" style={{ height: "120%" }}>
+      <div ref={bgRef} className="absolute inset-0 will-change-transform h-full w-full">
         {heroImages.map((img, i) => (
           <div
             key={img}

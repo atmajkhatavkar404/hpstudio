@@ -91,8 +91,8 @@ export default function StoryPage() {
     
     const ctx = gsap.context(() => {
       gsap.to(heroBgRef.current, {
-        yPercent: 20,
         scale: 1.15,
+        yPercent: 5,
         transformOrigin: "center center",
         ease: "none",
         scrollTrigger: {
@@ -134,7 +134,7 @@ export default function StoryPage() {
       <section ref={sectionRef} className="pt-20 md:pt-24 relative">
         {heroPhotos.length >= 2 ? (
           <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
-            <div ref={heroBgRef} className="flex h-full will-change-transform" style={{ height: "120%" }}>
+            <div ref={heroBgRef} className="flex h-full w-full will-change-transform">
               {heroPhotos.slice(0, 2).map((src, i) => (
                 <div key={src} className="flex-1 overflow-hidden" style={i === 0 ? { borderRight: "3px solid #faf5eb" } : {}}>
                   <img
