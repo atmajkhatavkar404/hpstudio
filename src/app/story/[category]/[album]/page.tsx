@@ -138,6 +138,7 @@ export default function StoryPage() {
             className="w-full h-96 object-cover rounded-xl"
             src={videoSrc}
             controls
+            poster="/images/wedding-couple-By2WaDyA.jpg"
           />
         </div>
       </section>
