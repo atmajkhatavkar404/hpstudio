@@ -146,8 +146,6 @@ export default function StoryPage() {
       <section ref={sectionRef} className="pt-20 md:pt-24 relative">
         {heroPhotos.length >= 2 ? (
           <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden" style={{ backgroundColor: "transparent" }}>
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
             {/* Album name overlay */}
             <div ref={heroRef} className="absolute bottom-0 left-0 right-0 text-center pb-10 md:pb-12 px-4 flex flex-col items-center">
               <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-2" style={{ color: "#d4a843" }}>
