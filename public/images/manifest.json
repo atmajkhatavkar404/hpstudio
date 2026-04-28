@@ -164,9 +164,10 @@
       ]
     },
     "wedding": {
-      "video": "/videos/video2.mp4",
+      "video": "/video2.mp4",
       "albums": {
         "ananya-rohit": {
+          "video": "/videos/ananya-rohit-video.mp4",
           "photos": [],
           "events": {
             "haldi": [
@@ -200,6 +201,7 @@
           }
         },
         "priya-karan": {
+          "video": "/videos/priya-karan-video.mp4",
           "photos": [],
           "events": {
             "haldi": [
@@ -233,6 +235,7 @@
           }
         },
         "Shivani-Raj": {
+          "video": "/videos/shivani-raj-video.mp4",
           "photos": [],
           "events": {
             "haldi": [
@@ -266,6 +269,7 @@
           }
         },
         "priya-Shivam": {
+          "video": "/videos/priya-shivam-video.mp4",
           "photos": [],
           "events": {
             "haldi": [
@@ -299,6 +303,7 @@
           }
         },
         "snehal-rahul": {
+          "video": "/videos/snehal-rahul-video.mp4",
           "photos": [],
           "events": {
             "haldi": [
