@@ -130,6 +130,18 @@ export default function StoryPage() {
     <div className="overflow-x-hidden" style={{ backgroundColor: "#faf5eb" }}>
       <Navbar />
 
+      {/* ─── Video Section ─── */}
+      <section className="py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <video
+            className="w-full h-96 object-cover rounded-xl"
+            src="/wedding-video.mp4"
+            controls
+            poster="/images/wedding-couple-By2WaDyA.jpg"
+          />
+        </div>
+      </section>
+
       {/* ─── Hero Collage ─── */}
       <section ref={sectionRef} className="pt-20 md:pt-24 relative">
         {heroPhotos.length >= 2 ? (
@@ -206,18 +218,6 @@ export default function StoryPage() {
             </h1>
           </div>
         )}
-      </section>
-
-      {/* ─── Video Section ─── */}
-      <section className="py-8 md:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <video
-            className="w-full h-96 object-cover rounded-xl"
-            src="/wedding-video.mp4"
-            controls
-            poster="/images/wedding-couple-By2WaDyA.jpg"
-          />
-        </div>
       </section>
 
       {/* ─── Photo Grid with Load More ─── */}
