@@ -21,7 +21,7 @@ export default function DiscountBanner() {
   return (
     <section
       ref={bannerRef}
-      className="my-8 gold-gradient will-change-transform rounded-full"
+      className="my-8 gold-gradient will-change-transform"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 text-center flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
         <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase" style={{ color: "#0d0d0d" }}>
