@@ -15,16 +15,29 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    let lastScrollY = 0;
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (pathname === "/") {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setHidden(true);
+        } else {
+          setHidden(false);
+        }
+      }
+      lastScrollY = currentScrollY;
+      setScrolled(currentScrollY > 50);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${pathname !== "/" ? "shadow-lg" : ""}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${pathname !== "/" ? "shadow-lg" : ""} ${pathname === "/" && hidden ? "-translate-y-full" : "translate-y-0"}`}
       style={{ backgroundColor: pathname === "/" ? "transparent" : "#0d0d0d" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
