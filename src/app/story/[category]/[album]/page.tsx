@@ -132,7 +132,7 @@ export default function StoryPage() {
       <Navbar />
 
       {/* ─── Video Section ─── */}
-      <section className="pt-8 md:pt-12 pb-0">
+      <section className="pt-8 md:pt-12 pb-0 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <video
             className="w-full h-96 object-cover rounded-xl"
@@ -140,72 +140,54 @@ export default function StoryPage() {
             controls
           />
         </div>
+        {/* Album name overlay */}
+        <div ref={heroRef} className="absolute bottom-0 left-0 right-0 text-center pb-10 md:pb-12 px-4 flex flex-col items-center">
+          <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-2" style={{ color: "#d4a843" }}>
+            {CATEGORY_LABELS[cat] ?? category}
+          </p>
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
+            style={{ fontFamily: "var(--font-family-playfair)" }}
+          >
+            {displayName.includes("&") ? (
+              <>
+                {displayName.split("&")[0].trim()}{" "}
+                <span className="" style={{ color: "#d4a843" }}>&</span>{" "}
+                {displayName.split("&")[1]?.trim()}
+              </>
+            ) : (
+              displayName
+            )}
+          </h1>
+
+          {/* ─── Events Filter (Overlaid on Video) ─── */}
+          {eventsList.length > 0 && (
+            <div className="flex flex-wrap justify-center gap-3 mt-4 mb-2 relative z-20">
+              {["All", ...eventsList].map((ev) => (
+                <button
+                  key={ev}
+                  onClick={() => { setActiveEvent(ev); setPage(1); }}
+                  className="px-5 py-2 tracking-widest text-[10px] md:text-xs font-semibold uppercase border rounded-full transition-all duration-300 hover:scale-105"
+                  style={{
+                    borderColor: activeEvent === ev ? "#d4a843" : "rgba(255,255,255,0.3)",
+                    backgroundColor: activeEvent === ev ? "#d4a843" : "rgba(0,0,0,0.4)",
+                    color: activeEvent === ev ? "#0d0d0d" : "white",
+                    backdropFilter: "blur(8px)"
+                  }}
+                >
+                  {ev === "All" ? "All Photos" : ev.replace(/-/g, " ")}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <p className="mt-4 text-white/70 text-xs md:text-sm tracking-widest">
+            {allPhotos.length} TOTAL PHOTOS
+          </p>
+        </div>
       </section>
 
-      {/* ─── Hero Collage ─── */}
-      <section ref={sectionRef} className="pt-4 md:pt-8 relative">
-        {heroPhotos.length >= 2 ? (
-          <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden" style={{ backgroundColor: "transparent" }}>
-            {/* Album name overlay */}
-            <div ref={heroRef} className="absolute bottom-0 left-0 right-0 text-center pb-10 md:pb-12 px-4 flex flex-col items-center">
-              <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-2" style={{ color: "#d4a843" }}>
-                {CATEGORY_LABELS[cat] ?? category}
-              </p>
-              <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
-                style={{ fontFamily: "var(--font-family-playfair)" }}
-              >
-                {displayName.includes("&") ? (
-                  <>
-                    {displayName.split("&")[0].trim()}{" "}
-                    <span className="" style={{ color: "#d4a843" }}>&</span>{" "}
-                    {displayName.split("&")[1]?.trim()}
-                  </>
-                ) : (
-                  displayName
-                )}
-              </h1>
-              
-              {/* ─── Events Filter (Overlaid on Image) ─── */}
-              {eventsList.length > 0 && (
-                <div className="flex flex-wrap justify-center gap-3 mt-4 mb-2 relative z-20">
-                  {["All", ...eventsList].map((ev) => (
-                    <button
-                      key={ev}
-                      onClick={() => { setActiveEvent(ev); setPage(1); }}
-                      className="px-5 py-2 tracking-widest text-[10px] md:text-xs font-semibold uppercase border rounded-full transition-all duration-300 hover:scale-105"
-                      style={{
-                        borderColor: activeEvent === ev ? "#d4a843" : "rgba(255,255,255,0.3)",
-                        backgroundColor: activeEvent === ev ? "#d4a843" : "rgba(0,0,0,0.4)",
-                        color: activeEvent === ev ? "#0d0d0d" : "white",
-                        backdropFilter: "blur(8px)"
-                      }}
-                    >
-                      {ev === "All" ? "All Photos" : ev.replace(/-/g, " ")}
-                    </button>
-                  ))}
-                </div>
-              )}
-              
-              <p className="mt-4 text-white/70 text-xs md:text-sm tracking-widest">
-                {allPhotos.length} TOTAL PHOTOS
-              </p>
-            </div>
-          </div>
-        ) : (
-          <div className="pt-12 pb-6 text-center px-4">
-            <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: "#b8922e" }}>
-              {CATEGORY_LABELS[cat] ?? category}
-            </p>
-            <h1
-              className="text-4xl md:text-6xl font-bold"
-              style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
-            >
-              {displayName}
-            </h1>
-          </div>
-        )}
-      </section>
+
 
       {/* ─── Photo Grid with Load More ─── */}
       <section className="px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 pt-8">
