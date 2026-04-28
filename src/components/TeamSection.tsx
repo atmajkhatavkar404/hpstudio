@@ -48,7 +48,7 @@ export default function TeamSection() {
           The People Behind The Lens
         </p>
         <h2
-          className="text-3xl md:text-5xl lg:text-6xl font-bold mb-12 md:mb-16"
+          className="text-2xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16"
           style={{ fontFamily: "var(--font-family-playfair)" }}
         >
           <span style={{ color: "#0d0d0d" }}>Our </span>

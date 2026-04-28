@@ -47,7 +47,7 @@ export default function InstagramSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-14">
           <h2
-            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3"
+            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3"
             style={{ fontFamily: "var(--font-family-playfair)" }}
           >
             <span className="text-white">On </span>

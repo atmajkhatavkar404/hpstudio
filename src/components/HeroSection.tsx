@@ -110,7 +110,7 @@ export default function HeroSection() {
         </p>
 
         <h1
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
           style={{ fontFamily: "var(--font-family-playfair)" }}
         >
           <span className="text-white">We Capture Emotions,</span>

@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
             Testimonials
           </p>
           <h2
-            className="text-3xl md:text-5xl lg:text-6xl font-bold"
+            className="text-2xl md:text-4xl lg:text-5xl font-bold"
             style={{ fontFamily: "var(--font-family-playfair)" }}
           >
             <span style={{ color: "#0d0d0d" }}>What Our </span>

@@ -78,7 +78,7 @@ export default function PortfolioSection() {
           <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-3" style={{ color: "#d4a843" }}>
             Our Work
           </p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold" style={{ fontFamily: "var(--font-family-playfair)" }}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold" style={{ fontFamily: "var(--font-family-playfair)" }}>
             <span className="text-white">Professional </span>
             <span className="" style={{ color: "#d4a843" }}>Portfolio</span>
           </h2>

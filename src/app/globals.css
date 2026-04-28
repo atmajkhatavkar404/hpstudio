@@ -139,6 +139,7 @@ html {
     background-color: var(--dark);
     color: var(--color-foreground);
     font-family: var(--font-family-poppins);
+    font-size: 0.95rem;
     overflow-x: hidden;
   }
 }

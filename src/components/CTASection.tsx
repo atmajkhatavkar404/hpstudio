@@ -137,7 +137,7 @@ export default function CTASection() {
 
             {/* Heading */}
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-5"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-5"
               style={{ fontFamily: "var(--font-family-playfair)" }}
             >
               <span style={{ color: "#0d0d0d" }}>Create memories that</span>
