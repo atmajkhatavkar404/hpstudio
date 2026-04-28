@@ -208,6 +208,18 @@ export default function StoryPage() {
         )}
       </section>
 
+      {/* ─── Video Section ─── */}
+      <section className="py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <video
+            className="w-full h-96 object-cover rounded-xl"
+            src="/wedding-video.mp4"
+            controls
+            poster="/images/wedding-couple-By2WaDyA.jpg"
+          />
+        </div>
+      </section>
+
       {/* ─── Photo Grid with Load More ─── */}
       <section className="px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 pt-8">
         <div
