@@ -132,7 +132,7 @@ export default function StoryPage() {
       <Navbar />
 
       {/* ─── Video Section ─── */}
-      <section className="pt-8 md:pt-12 pb-0 relative">
+      <section className="pt-8 md:pt-12 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <video
             className="w-full h-96 object-cover rounded-xl"
@@ -140,39 +140,33 @@ export default function StoryPage() {
             controls
           />
         </div>
-        {/* Album name overlay */}
-        <div ref={heroRef} className="absolute bottom-0 left-0 right-0 text-center pb-10 md:pb-12 px-4 flex flex-col items-center">
-          <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-2" style={{ color: "#d4a843" }}>
+      </section>
+
+      {/* ─── Album Details Section ─── */}
+      <section className="pt-4 md:pt-8 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-2" style={{ color: "#b8922e" }}>
             {CATEGORY_LABELS[cat] ?? category}
           </p>
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
-            style={{ fontFamily: "var(--font-family-playfair)" }}
+            className="text-4xl md:text-6xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
           >
-            {displayName.includes("&") ? (
-              <>
-                {displayName.split("&")[0].trim()}{" "}
-                <span className="" style={{ color: "#d4a843" }}>&</span>{" "}
-                {displayName.split("&")[1]?.trim()}
-              </>
-            ) : (
-              displayName
-            )}
+            {displayName}
           </h1>
 
-          {/* ─── Events Filter (Overlaid on Video) ─── */}
+          {/* ─── Events Filter ─── */}
           {eventsList.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-3 mt-4 mb-2 relative z-20">
+            <div className="flex flex-wrap justify-center gap-3 mt-4 mb-2">
               {["All", ...eventsList].map((ev) => (
                 <button
                   key={ev}
                   onClick={() => { setActiveEvent(ev); setPage(1); }}
                   className="px-5 py-2 tracking-widest text-[10px] md:text-xs font-semibold uppercase border rounded-full transition-all duration-300 hover:scale-105"
                   style={{
-                    borderColor: activeEvent === ev ? "#d4a843" : "rgba(255,255,255,0.3)",
-                    backgroundColor: activeEvent === ev ? "#d4a843" : "rgba(0,0,0,0.4)",
-                    color: activeEvent === ev ? "#0d0d0d" : "white",
-                    backdropFilter: "blur(8px)"
+                    borderColor: activeEvent === ev ? "#d4a843" : "rgba(13,13,13,0.2)",
+                    backgroundColor: activeEvent === ev ? "#d4a843" : "transparent",
+                    color: activeEvent === ev ? "#0d0d0d" : "#555",
                   }}
                 >
                   {ev === "All" ? "All Photos" : ev.replace(/-/g, " ")}
@@ -181,7 +175,7 @@ export default function StoryPage() {
             </div>
           )}
 
-          <p className="mt-4 text-white/70 text-xs md:text-sm tracking-widest">
+          <p className="mt-4 text-neutral-600 text-xs md:text-sm tracking-widest">
             {allPhotos.length} TOTAL PHOTOS
           </p>
         </div>
