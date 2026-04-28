@@ -25,7 +25,7 @@ export default function Index() {
       ([entry]) => {
         if (entry.isIntersecting) {
           observer.disconnect();
-          router.push("/portfolio");
+          setTimeout(() => router.push("/portfolio"), 3000);
         }
       },
       { threshold: 0.5 },
