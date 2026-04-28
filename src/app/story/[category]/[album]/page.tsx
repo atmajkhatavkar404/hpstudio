@@ -138,7 +138,10 @@ export default function StoryPage() {
             className="w-full h-96 object-cover rounded-xl"
             src={videoSrc}
             controls
+            autoPlay
+            muted
             poster="/images/wedding-couple-By2WaDyA.jpg"
+            onError={() => console.log('Video failed to load:', videoSrc)}
           />
         </div>
       </section>
