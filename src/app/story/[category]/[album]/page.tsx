@@ -217,9 +217,18 @@ export default function StoryPage() {
           {visiblePhotos.map((src, i) => (
             <div
               key={`${src}-${i}`}
-              className="photo-card group relative overflow-hidden rounded-xl cursor-pointer"
+              className="photo-card group relative overflow-hidden rounded-xl cursor-pointer will-change-transform"
               style={{ aspectRatio: "1", boxShadow: "0 4px 20px -8px rgba(0,0,0,0.15)" }}
-              onClick={() => setLightbox(i)}
+              onClick={(e) => {
+                gsap.to(e.currentTarget, {
+                  scale: 0.95,
+                  duration: 0.1,
+                  yoyo: true,
+                  repeat: 1,
+                  ease: "power2.inOut",
+                  onComplete: () => setLightbox(i),
+                });
+              }}
             >
               <img
                 src={src}
