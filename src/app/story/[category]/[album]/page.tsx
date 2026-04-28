@@ -132,7 +132,7 @@ export default function StoryPage() {
       <Navbar />
 
       {/* ─── Video Section ─── */}
-      <section className="py-8 md:py-12">
+      <section className="pt-8 md:pt-12 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <video
             className="w-full h-96 object-cover rounded-xl"
