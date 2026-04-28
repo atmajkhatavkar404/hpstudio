@@ -29,7 +29,7 @@ function ReelRow({ items, direction = "left", speed = 12 }: { items: GalleryItem
           <div
             key={`${item.src}-${i}`}
             className="relative overflow-hidden group cursor-pointer flex-shrink-0 rounded-xl"
-            style={{ width: "300px", height: "210px", boxShadow: "0 8px 30px -8px rgba(0,0,0,0.6)" }}
+            style={{ width: "210px", height: "300px", boxShadow: "0 8px 30px -8px rgba(0,0,0,0.6)" }}
           >
             <img
               src={item.src}

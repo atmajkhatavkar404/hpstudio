@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
             </p>
             <h2
               ref={titleRef}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
               style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
             >
               Meet <span className="" style={{ color: "#d4a843" }}>HP Studio</span>
