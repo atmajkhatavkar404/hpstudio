@@ -3421,11 +3421,6 @@
       margin-inline: calc(var(--spacing) * 6);
     }
   }
-  .md\:mx-8 {
-    @media (width >= 48rem) {
-      margin-inline: calc(var(--spacing) * 8);
-    }
-  }
   .md\:mt-6 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 6);
@@ -4508,6 +4503,17 @@ html {
 }
 .gold-gradient {
   background: linear-gradient(135deg, #d4a843 0%, #f0d078 50%, #d4a843 100%);
+}
+@keyframes zoom-in-out {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.animate-zoom {
+  animation: zoom-in-out 8s ease-in-out infinite;
 }
 @property --tw-translate-x {
   syntax: "*";

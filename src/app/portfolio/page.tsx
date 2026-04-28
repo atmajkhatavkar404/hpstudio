@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../../components/Navbar";
@@ -25,6 +26,7 @@ export default function PortfolioPage() {
   const manifest = useManifest();
   const [active, setActive] = useState<Filter>("All");
   const gridRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const albums = useMemo(() => {
     const filterCat = active === "All" ? undefined : active;
@@ -171,10 +173,28 @@ export default function PortfolioPage() {
 /* ─── Album Card ─── */
 
 function AlbumCard({ album }: { album: AlbumInfo }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!cardRef.current) return;
+    gsap.to(cardRef.current, {
+      scale: 0.95,
+      duration: 0.1,
+      yoyo: true,
+      repeat: 1,
+      ease: "power2.inOut",
+      onComplete: () => {
+        router.push(`/story/${album.category}/${album.slug}`);
+      },
+    });
+  };
+
   return (
-    <Link
-      href={`/story/${album.category}/${album.slug}`}
-      className="album-card group relative overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer block aspect-[4/3] md:aspect-[3/2]"
+    <div
+      ref={cardRef}
+      onClick={handleClick}
+      className="album-card group relative overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer block aspect-[4/3] md:aspect-[3/2] will-change-transform"
       style={{ boxShadow: "0 12px 40px -15px rgba(0,0,0,0.2)" }}
     >
       {/* Cover collage: two images side by side */}
@@ -218,6 +238,6 @@ function AlbumCard({ album }: { album: AlbumInfo }) {
           {album.displayName}
         </h3>
       </div>
-    </Link>
+    </div>
   );
 }

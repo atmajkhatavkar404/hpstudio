@@ -1,4 +1,8 @@
-import { useMemo, useState } from "react";
+"use client";
+
+import { useMemo, useState, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { gsap } from "gsap";
 import { useManifest } from "../lib/useManifest";
 import {
   CATEGORY_LABELS,
@@ -53,6 +57,8 @@ function ReelRow({ items, direction = "left", speed = 12 }: { items: GalleryItem
 export default function PortfolioSection() {
   const manifest = useManifest();
   const [active, setActive] = useState<Filter>("All");
+  const buttonRef = useRef<HTMLAnchorElement>(null);
+  const router = useRouter();
 
   // Use a smaller cap for the homepage reel so it stays lightweight
   const highlights = useMemo(() => getHighlights(manifest, Math.min(HIGHLIGHTS_PER_CATEGORY, 6)), [manifest]);
@@ -103,8 +109,23 @@ export default function PortfolioSection() {
 
       <div className="text-center mt-10 px-4 sm:px-6 lg:px-8">
         <a
+          ref={buttonRef}
           href="/portfolio"
-          className="inline-block px-8 py-3 text-sm tracking-[0.15em] font-semibold border-2 rounded-full transition-all duration-300"
+          onClick={(e) => {
+            e.preventDefault();
+            if (!buttonRef.current) return;
+            gsap.to(buttonRef.current, {
+              scale: 0.95,
+              duration: 0.1,
+              yoyo: true,
+              repeat: 1,
+              ease: "power2.inOut",
+              onComplete: () => {
+                router.push("/portfolio");
+              },
+            });
+          }}
+          className="inline-block px-8 py-3 text-sm tracking-[0.15em] font-semibold border-2 rounded-full transition-all duration-300 will-change-transform"
           style={{ borderColor: "white", color: "white" }}
           onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "white"; e.currentTarget.style.color = "#0d0d0d"; }}
           onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "white"; }}

@@ -182,3 +182,13 @@ html {
 .gold-gradient {
   background: linear-gradient(135deg, #d4a843 0%, #f0d078 50%, #d4a843 100%);
 }
+
+/* Zoom animation for background images */
+@keyframes zoom-in-out {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-zoom {
+  animation: zoom-in-out 8s ease-in-out infinite;
+}

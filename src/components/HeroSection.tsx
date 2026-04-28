@@ -88,7 +88,7 @@ export default function HeroSection() {
             <img
               src={img}
               alt="HP Studio photography"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover animate-zoom"
             />
           </div>
         ))}
