@@ -111,7 +111,7 @@ export default function PortfolioPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div ref={gridRef} className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {albums.map((album) => (
-            <AlbumCard key={`${album.category}-${album.slug}`} album={album} />
+            <AlbumCard key={`${album.category}-${album.slug}`} album={album} router={router} />
           ))}
 
           {albums.length === 0 && manifest.total > 0 && (
@@ -172,7 +172,7 @@ export default function PortfolioPage() {
 
 /* ─── Album Card ─── */
 
-function AlbumCard({ album }: { album: AlbumInfo }) {
+function AlbumCard({ album, router }: { album: AlbumInfo; router: any }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (e: React.MouseEvent) => {
