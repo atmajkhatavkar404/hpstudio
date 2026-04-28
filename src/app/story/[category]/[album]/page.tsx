@@ -145,18 +145,7 @@ export default function StoryPage() {
       {/* ─── Hero Collage ─── */}
       <section ref={sectionRef} className="pt-20 md:pt-24 relative">
         {heroPhotos.length >= 2 ? (
-          <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
-            <div ref={heroBgRef} className="flex h-full w-full will-change-transform">
-              {heroPhotos.slice(0, 2).map((src, i) => (
-                <div key={src} className="flex-1 overflow-hidden" style={i === 0 ? { borderRight: "3px solid #faf5eb" } : {}}>
-                  <img
-                    src={src}
-                    alt={`${displayName} photo ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden" style={{ backgroundColor: "#faf5eb" }}>
             {/* Dark gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
             {/* Album name overlay */}
