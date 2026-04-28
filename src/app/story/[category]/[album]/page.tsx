@@ -143,7 +143,7 @@ export default function StoryPage() {
       </section>
 
       {/* ─── Hero Collage ─── */}
-      <section ref={sectionRef} className="pt-20 md:pt-24 relative">
+      <section ref={sectionRef} className="pt-4 md:pt-8 relative">
         {heroPhotos.length >= 2 ? (
           <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden" style={{ backgroundColor: "transparent" }}>
             {/* Album name overlay */}
