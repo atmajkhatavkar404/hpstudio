@@ -218,7 +218,7 @@ export default function StoryPage() {
             <div
               key={`${src}-${i}`}
               className="photo-card group relative overflow-hidden rounded-xl cursor-pointer will-change-transform"
-              style={{ aspectRatio: "1", boxShadow: "0 4px 20px -8px rgba(0,0,0,0.15)" }}
+              style={{ aspectRatio: "425/475", boxShadow: "0 4px 20px -8px rgba(0,0,0,0.15)" }}
               onClick={(e) => {
                 gsap.to(e.currentTarget, {
                   scale: 0.95,
