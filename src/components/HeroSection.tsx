@@ -154,20 +154,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
-        {heroImages.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`transition-all duration-300 rounded-full ${i === current
-                ? "w-8 h-2"
-                : "w-2 h-2 bg-white/50"
-              }`}
-            style={i === current ? { backgroundColor: "#d4a843" } : {}}
-          />
-        ))}
-      </div>
+
     </section>
   );
 }

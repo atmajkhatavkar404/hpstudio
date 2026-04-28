@@ -146,12 +146,10 @@ export default function TestimonialsSection() {
             href="https://google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-7 py-3 text-sm tracking-[0.15em] font-semibold uppercase rounded-full transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3 text-sm tracking-[0.15em] font-semibold uppercase transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: "#0d0d0d", color: "white" }}
           >
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white mr-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12v3.2h5.35c-.5 2.4-2.55 3.8-5.35 3.8a6.1 6.1 0 1 1 0-12.2c1.5 0 2.85.55 3.9 1.45L18.2 5a9.6 9.6 0 1 0-6.2 17c5.5 0 9.5-3.85 9.5-9.5 0-.5-.05-1-.15-1.4z"/></svg>
-            </span>
+            <span className="mr-2">G</span>
             Google Review
           </a>
         </div>
