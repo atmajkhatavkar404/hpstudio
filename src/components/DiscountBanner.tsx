@@ -21,19 +21,21 @@ export default function DiscountBanner() {
   return (
     <section
       ref={bannerRef}
-      className="my-8 px-4 py-3 md:py-4 text-center gold-gradient will-change-transform rounded-full flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4"
+      className="my-8 gold-gradient will-change-transform rounded-full"
     >
-      <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase" style={{ color: "#0d0d0d" }}>
-        Limited Time Offer
-      </span>
-      <span className="hidden sm:inline text-[#0d0d0d]/40">|</span>
-      <span className="text-sm md:text-base font-semibold" style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}>
-        Get 10% Discount on Your First Shoot
-      </span>
-      <span className="hidden sm:inline text-[#0d0d0d]/40">|</span>
-      <span className="text-xs md:text-sm" style={{ color: "#0d0d0d" }}>
-        Book today &amp; save on premium photography
-      </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 text-center flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+        <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase" style={{ color: "#0d0d0d" }}>
+
+        </span>
+        <span className="hidden sm:inline text-[#0d0d0d]/40">|</span>
+        <span className="text-sm md:text-base font-semibold" style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}>
+          Get 10% Discount on Your First Shoot
+        </span>
+        <span className="hidden sm:inline text-[#0d0d0d]/40">|</span>
+        <span className="text-xs md:text-sm" style={{ color: "#0d0d0d" }}>
+
+        </span>
+      </div>
     </section>
   );
 }
