@@ -128,7 +128,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-10">
           <a
             href="#book"
-            className="px-8 py-3 text-xs md:text-sm tracking-[0.15em] font-semibold uppercase transition-all duration-300 rounded-sm"
+            className="px-8 py-3 text-xs md:text-sm tracking-[0.15em] font-semibold uppercase rounded-full transition-all duration-300"
             style={{
               backgroundColor: "#d4a843",
               color: "#0d0d0d",
@@ -140,7 +140,7 @@ export default function HeroSection() {
             href="https://wa.me/91XXXXXXXXXX"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-8 py-3 text-xs md:text-sm tracking-[0.15em] font-semibold uppercase border-2 rounded-sm transition-all duration-300"
+            className="flex items-center justify-center gap-2 px-8 py-3 text-xs md:text-sm tracking-[0.15em] font-semibold uppercase border-2 rounded-full transition-all duration-300"
             style={{
               borderColor: "#d4a843",
               color: "#d4a843",

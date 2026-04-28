@@ -178,7 +178,7 @@ export default function CTASection() {
                 href="https://wa.me/91XXXXXXXXXX"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 text-xs tracking-[0.2em] font-bold uppercase rounded-full border transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 text-xs tracking-[0.2em] font-bold uppercase border rounded-full transition-all duration-300 hover:scale-105"
                 style={{
                   borderColor: "rgba(13, 13, 13, 0.3)",
                   color: "#333",

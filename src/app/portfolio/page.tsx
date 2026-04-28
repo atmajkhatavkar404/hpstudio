@@ -92,7 +92,7 @@ export default function PortfolioPage() {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className="px-5 py-2 text-sm tracking-wider rounded-full border transition-all duration-300"
+              className="px-5 py-2 text-sm tracking-wider border rounded-full transition-all duration-300"
               style={{
                 borderColor: active === cat ? "#d4a843" : "rgba(13,13,13,0.2)",
                 backgroundColor: active === cat ? "#d4a843" : "transparent",

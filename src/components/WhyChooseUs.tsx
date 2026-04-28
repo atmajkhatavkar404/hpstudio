@@ -119,7 +119,7 @@ export default function WhyChooseUs() {
           {repeated.map((feature, i) => (
             <span
               key={i}
-              className="inline-flex items-center mx-2 md:mx-3 px-5 md:px-6 py-2 md:py-2.5 text-sm md:text-base rounded-full border whitespace-nowrap"
+              className="inline-flex items-center mx-2 md:mx-3 px-5 md:px-6 py-2 md:py-2.5 text-sm md:text-base border rounded-full whitespace-nowrap"
               style={{ borderColor: "rgba(13,13,13,0.15)", color: "#0d0d0d", backgroundColor: "rgba(255,255,255,0.5)" }}
             >
               {feature}

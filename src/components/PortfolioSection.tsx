@@ -83,7 +83,7 @@ export default function PortfolioSection() {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className="px-5 py-2 text-sm tracking-wider rounded-full border transition-all duration-300"
+              className="px-5 py-2 text-sm tracking-wider border rounded-full transition-all duration-300"
               style={{
                 borderColor: active === cat ? "#d4a843" : "rgba(255,255,255,0.2)",
                 backgroundColor: active === cat ? "#d4a843" : "transparent",
@@ -104,7 +104,7 @@ export default function PortfolioSection() {
       <div className="text-center mt-10 px-4 sm:px-6 lg:px-8">
         <a
           href="/portfolio"
-          className="inline-block px-8 py-3 text-sm tracking-[0.15em] font-semibold border-2 rounded-sm transition-all duration-300"
+          className="inline-block px-8 py-3 text-sm tracking-[0.15em] font-semibold border-2 rounded-full transition-all duration-300"
           style={{ borderColor: "white", color: "white" }}
           onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "white"; e.currentTarget.style.color = "#0d0d0d"; }}
           onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "white"; }}

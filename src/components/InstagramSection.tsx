@@ -99,7 +99,7 @@ export default function InstagramSection() {
             href="https://instagram.com/hp_studio_07"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 text-sm tracking-[0.15em] font-semibold uppercase border-2 rounded-sm transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-3 text-sm tracking-[0.15em] font-semibold uppercase border-2 rounded-full transition-all duration-300 hover:scale-105"
             style={{ borderColor: "#d4a843", color: "#d4a843" }}
           >
             Follow on Instagram →
