@@ -3,6 +3,7 @@
   "total": 106,
   "categories": {
     "baby": {
+      "video": "/videos/baby-video.mp4",
       "albums": {
         "aarav-sharma": {
           "photos": [],
@@ -59,6 +60,7 @@
       "loose": []
     },
     "events": {
+      "video": "/videos/events-video.mp4",
       "albums": {
         "annual-meetup": {
           "photos": [],
@@ -127,6 +129,7 @@
       "loose": []
     },
     "pre-wedding": {
+      "video": "/videos/prewedding-video.mp4",
       "albums": {
         "neha-vikas": {
           "photos": [],
@@ -153,6 +156,7 @@
       "loose": []
     },
     "team": {
+      "video": "/videos/team-video.mp4",
       "albums": {},
       "loose": [
         "/images/team/team-abhi-CVjCTo_9.jpg",
@@ -160,6 +164,7 @@
       ]
     },
     "wedding": {
+      "video": "/videos/video2.mp4",
       "albums": {
         "ananya-rohit": {
           "photos": [],

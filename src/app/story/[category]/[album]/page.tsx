@@ -24,6 +24,7 @@ export default function StoryPage() {
   const { category, album } = useParams() as { category: string; album: string };
   const manifest = useManifest();
   const cat = category as CategoryKey;
+  const videoSrc = manifest.categories[cat]?.video || "/wedding-video.mp4";
   const heroRef = useRef<HTMLDivElement>(null);
   const heroBgRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -135,7 +136,7 @@ export default function StoryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <video
             className="w-full h-96 object-cover rounded-xl"
-            src="/wedding-video.mp4"
+            src={videoSrc}
             controls
           />
         </div>
