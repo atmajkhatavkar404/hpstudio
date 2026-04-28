@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-lg"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${pathname !== "/" ? "shadow-lg" : ""}`}
       style={{ backgroundColor: pathname === "/" ? "transparent" : "#0d0d0d" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
