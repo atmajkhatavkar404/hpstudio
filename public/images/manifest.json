@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-04-27T06:20:52.686Z",
-  "total": 106,
+  "generatedAt": "2026-04-29T02:54:59.709Z",
+  "total": 137,
   "categories": {
     "baby": {
-      "video": "/videos/baby-video.mp4",
       "albums": {
         "aarav-sharma": {
           "photos": [],
@@ -60,7 +59,6 @@
       "loose": []
     },
     "events": {
-      "video": "/videos/events-video.mp4",
       "albums": {
         "annual-meetup": {
           "photos": [],
@@ -129,7 +127,6 @@
       "loose": []
     },
     "pre-wedding": {
-      "video": "/videos/prewedding-video.mp4",
       "albums": {
         "neha-vikas": {
           "photos": [],
@@ -156,7 +153,6 @@
       "loose": []
     },
     "team": {
-      "video": "/videos/team-video.mp4",
       "albums": {},
       "loose": [
         "/images/team/team-abhi-CVjCTo_9.jpg",
@@ -164,11 +160,41 @@
       ]
     },
     "wedding": {
-      "video": "/video2.mp4",
       "albums": {
         "ananya-rohit": {
-          "video": "/videos/ananya-rohit.mp4",
-          "photos": [],
+          "photos": [
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (1).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (10).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (11).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (12).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (13).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (14).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (15).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (16).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (17).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (18).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (19).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (2).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (20).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (21).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (22).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (23).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (24).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (25).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (26).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (27).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (28).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (29).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (3).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (4).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (5).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (6).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (7).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (8).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (9).jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM.jpeg",
+            "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.15 PM.jpeg"
+          ],
           "events": {
             "haldi": [
               "/images/wedding/ananya-rohit/haldi/photo-1.jpg",
@@ -201,75 +227,6 @@
           }
         },
         "priya-karan": {
-          "video": "/videos/priya-karan.mp4",
-          "photos": [],
-          "events": {
-            "haldi": [
-              "/images/wedding/priya-karan/haldi/photo-1.jpg",
-              "/images/wedding/priya-karan/haldi/photo-2.jpg",
-              "/images/wedding/priya-karan/haldi/photo-3.jpg",
-              "/images/wedding/priya-karan/haldi/photo-4.jpg",
-              "/images/wedding/priya-karan/haldi/photo-5.jpg"
-            ],
-            "prewedding": [
-              "/images/wedding/priya-karan/prewedding/photo-1.jpg",
-              "/images/wedding/priya-karan/prewedding/photo-2.jpg",
-              "/images/wedding/priya-karan/prewedding/photo-3.jpg",
-              "/images/wedding/priya-karan/prewedding/photo-4.jpg",
-              "/images/wedding/priya-karan/prewedding/photo-5.jpg"
-            ],
-            "reception": [
-              "/images/wedding/priya-karan/reception/photo-1.jpg",
-              "/images/wedding/priya-karan/reception/photo-2.jpg",
-              "/images/wedding/priya-karan/reception/photo-3.jpg",
-              "/images/wedding/priya-karan/reception/photo-4.jpg",
-              "/images/wedding/priya-karan/reception/photo-5.jpg"
-            ],
-            "wedding": [
-              "/images/wedding/priya-karan/wedding/photo-1.jpg",
-              "/images/wedding/priya-karan/wedding/photo-2.jpg",
-              "/images/wedding/priya-karan/wedding/photo-3.jpg",
-              "/images/wedding/priya-karan/wedding/photo-4.jpg",
-              "/images/wedding/priya-karan/wedding/photo-5.jpg"
-            ]
-          }
-        },
-        "Shivani-Raj": {
-          "video": "/videos/shivani-raj.mp4",
-          "photos": [],
-          "events": {
-            "haldi": [
-              "/images/wedding/priya-karan/haldi/photo-1.jpg",
-              "/images/wedding/priya-karan/haldi/photo-2.jpg",
-              "/images/wedding/priya-karan/haldi/photo-3.jpg",
-              "/images/wedding/priya-karan/haldi/photo-4.jpg",
-              "/images/wedding/priya-karan/haldi/photo-5.jpg"
-            ],
-            "prewedding": [
-              "/images/wedding/priya-karan/prewedding/photo-1.jpg",
-              "/images/wedding/priya-karan/prewedding/photo-2.jpg",
-              "/images/wedding/priya-karan/prewedding/photo-3.jpg",
-              "/images/wedding/priya-karan/prewedding/photo-4.jpg",
-              "/images/wedding/priya-karan/prewedding/photo-5.jpg"
-            ],
-            "reception": [
-              "/images/wedding/priya-karan/reception/photo-1.jpg",
-              "/images/wedding/priya-karan/reception/photo-2.jpg",
-              "/images/wedding/priya-karan/reception/photo-3.jpg",
-              "/images/wedding/priya-karan/reception/photo-4.jpg",
-              "/images/wedding/priya-karan/reception/photo-5.jpg"
-            ],
-            "wedding": [
-              "/images/wedding/priya-karan/wedding/photo-1.jpg",
-              "/images/wedding/priya-karan/wedding/photo-2.jpg",
-              "/images/wedding/priya-karan/wedding/photo-3.jpg",
-              "/images/wedding/priya-karan/wedding/photo-4.jpg",
-              "/images/wedding/priya-karan/wedding/photo-5.jpg"
-            ]
-          }
-        },
-        "priya-Shivam": {
-          "video": "/videos/priya-shivam.mp4",
           "photos": [],
           "events": {
             "haldi": [
@@ -303,7 +260,6 @@
           }
         },
         "snehal-rahul": {
-          "video": "/videos/snehal-rahul.mp4",
           "photos": [],
           "events": {
             "haldi": [
