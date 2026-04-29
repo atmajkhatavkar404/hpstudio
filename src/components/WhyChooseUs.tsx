@@ -167,7 +167,7 @@ const stats = [
   { target: 200, suffix: "+", label: "Photoshoots" },
   { target: 50, suffix: "+", label: "Weddings" },
   { target: 150, suffix: "+", label: "Happy Clients" },
-  { target: 5, suffix: " Years", label: "Experience" },
+  { target: 5, suffix: "", label: "Years Experience" },
 ];
 
 function StatItem({ target, suffix, label, started, delay }: {
