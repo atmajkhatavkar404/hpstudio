@@ -200,8 +200,8 @@ export default function StoryPage() {
               style={{ aspectRatio: "425/475", boxShadow: "0 4px 20px -8px rgba(0,0,0,0.15)" }}
               onClick={(e) => {
                 gsap.to(e.currentTarget, {
-                  scale: 0.95,
-                  duration: 0.1,
+                  scale: 0.9,
+                  duration: 0.2,
                   yoyo: true,
                   repeat: 1,
                   ease: "power2.inOut",
