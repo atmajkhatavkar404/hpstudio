@@ -5,6 +5,7 @@
     "baby": {
       "albums": {
         "aarav-sharma": {
+          "video": "/videos/aarav-sharma.mp4",
           "photos": [],
           "events": {
             "1st-birthday": [
@@ -22,6 +23,7 @@
           }
         },
         "kiara-mehta": {
+          "video": "/videos/kiara-mehta.mp4",
           "photos": [],
           "events": {
             "1st-birthday": [
@@ -39,6 +41,7 @@
           }
         },
         "little-reyaan": {
+          "video": "/videos/little-reyaan.mp4",
           "photos": [],
           "events": {
             "1st-birthday": [
@@ -61,6 +64,7 @@
     "events": {
       "albums": {
         "annual-meetup": {
+          "video": "/videos/annual-meetup.mp4",
           "photos": [],
           "events": {
             "awards-night": [
@@ -82,6 +86,7 @@
           }
         },
         "startup-launch": {
+          "video": "/videos/startup-launch.mp4",
           "photos": [],
           "events": {
             "awards-night": [
@@ -103,6 +108,7 @@
           }
         },
         "tech-summit-2024": {
+          "video": "/videos/tech-summit-2024.mp4",
           "photos": [],
           "events": {
             "awards-night": [
@@ -129,6 +135,7 @@
     "pre-wedding": {
       "albums": {
         "neha-vikas": {
+          "video": "/videos/neha-vikas.mp4",
           "photos": [],
           "events": {
             "haldi": [
@@ -162,6 +169,7 @@
     "wedding": {
       "albums": {
         "ananya-rohit": {
+          "video": "/videos/ananya-rohit.mp4",
           "photos": [
             "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (1).jpeg",
             "/images/wedding/ananya-rohit/WhatsApp Image 2026-04-28 at 8.13.14 PM (10).jpeg",
@@ -227,6 +235,7 @@
           }
         },
         "priya-karan": {
+          "video": "/videos/priya-karan.mp4",
           "photos": [],
           "events": {
             "haldi": [
