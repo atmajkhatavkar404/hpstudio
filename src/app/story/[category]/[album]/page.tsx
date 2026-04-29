@@ -128,7 +128,7 @@ export default function StoryPage() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <div className="overflow-x-hidden" style={{ backgroundColor: "white" }}>
+    <div className="overflow-x-hidden" style={{ backgroundColor: "#faf5eb" }}>
       <Navbar />
 
       {/* ─── Video Section ─── */}
