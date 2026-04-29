@@ -26,8 +26,6 @@ function ReelRow({ items, direction = "left", speed = 12 }: { items: GalleryItem
       <div
         className="flex gap-5 w-max"
         style={{ animation: `${animationName} ${duration}s linear infinite` }}
-        onMouseEnter={(e) => { e.currentTarget.style.animationPlayState = "paused"; }}
-        onMouseLeave={(e) => { e.currentTarget.style.animationPlayState = "running"; }}
       >
         {doubled.map((item, i) => (
           <div
