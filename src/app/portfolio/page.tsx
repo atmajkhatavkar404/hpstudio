@@ -128,41 +128,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Bento Box Photo Grid */}
-      {displayPhotos.length > 0 && (
-        <section className="px-4 sm:px-6 lg:px-8 pb-20 md:pb-28">
-          <div className="bento-grid max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 auto-rows-[250px] md:auto-rows-[300px]">
-            {displayPhotos.map((photo, i) => {
-              const index = i % 16;
-              let spanClass = "col-span-1 row-span-1";
-              
-              if (index === 8 || index === 9) {
-                spanClass = "col-span-2 row-span-1";
-              } else if (index >= 10 && index < 14) {
-                spanClass = "col-span-1 row-span-1";
-              } else if (index >= 14) {
-                spanClass = "col-span-2 row-span-2";
-              }
 
-              return (
-                <div 
-                  key={photo + i} 
-                  className={`bento-item overflow-hidden bg-neutral-200 relative group ${spanClass}`}
-                >
-                  <img
-                    src={photo}
-                    alt={`Portfolio image ${i}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
-                  />
-                  {/* Subtle overlay on hover */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
 
       <Footer />
       <WhatsAppButton />
