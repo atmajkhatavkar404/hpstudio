@@ -64,19 +64,19 @@ export default function CTASection() {
               {/* Decorative gold border ring */}
               <div
                 className="absolute -inset-3 rounded-[2rem] opacity-20"
-                style={{ border: "1.5px solid #d4a843" }}
+                style={{ border: "1.5px solid #D9A520" }}
               />
               {/* Decorative dots */}
               <div
                 className="absolute -top-6 -left-6 w-3 h-3 rounded-full"
-                style={{ backgroundColor: "#d4a843", opacity: 0.3 }}
+                style={{ backgroundColor: "#D9A520", opacity: 0.3 }}
               />
               <div
                 className="absolute -bottom-4 -right-4 w-2 h-2 rounded-full"
-                style={{ backgroundColor: "#d4a843", opacity: 0.25 }}
+                style={{ backgroundColor: "#D9A520", opacity: 0.25 }}
               />
               {/* Sparkle */}
-              <svg className="absolute -top-8 right-4 opacity-30" width="16" height="16" viewBox="0 0 16 16" fill="#d4a843">
+              <svg className="absolute -top-8 right-4 opacity-30" width="16" height="16" viewBox="0 0 16 16" fill="#D9A520">
                 <path d="M8 0 L9.5 6.5 L16 8 L9.5 9.5 L8 16 L6.5 9.5 L0 8 L6.5 6.5 Z" />
               </svg>
 
@@ -142,7 +142,7 @@ export default function CTASection() {
             >
               <span style={{ color: "#0d0d0d" }}>Create memories that</span>
               <br />
-              <span className="" style={{ color: "#d4a843" }}>
+              <span className="" style={{ color: "#D9A520" }}>
                 last forever
               </span>
             </h2>
@@ -165,7 +165,7 @@ export default function CTASection() {
                 rel="noopener noreferrer"
                 className="px-9 py-3 text-xs tracking-[0.2em] font-bold uppercase rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 style={{
-                  backgroundColor: "#d4a843",
+                  backgroundColor: "#D9A520",
                   color: "#0d0d0d",
                   boxShadow: "0 4px 15px rgba(212, 168, 67, 0.3)",
                 }}
@@ -195,7 +195,7 @@ export default function CTASection() {
             <div
               className="mt-12 mx-auto max-w-xs h-px"
               style={{
-                background: "linear-gradient(90deg, transparent, #d4a843, transparent)",
+                background: "linear-gradient(90deg, transparent, #D9A520, transparent)",
               }}
             />
           </div>
@@ -206,19 +206,19 @@ export default function CTASection() {
               {/* Decorative gold border ring */}
               <div
                 className="absolute -inset-3 rounded-[2rem] opacity-20"
-                style={{ border: "1.5px solid #d4a843" }}
+                style={{ border: "1.5px solid #D9A520" }}
               />
               {/* Decorative dots */}
               <div
                 className="absolute -top-4 -right-6 w-3 h-3 rounded-full"
-                style={{ backgroundColor: "#d4a843", opacity: 0.3 }}
+                style={{ backgroundColor: "#D9A520", opacity: 0.3 }}
               />
               <div
                 className="absolute -bottom-6 -left-4 w-2 h-2 rounded-full"
-                style={{ backgroundColor: "#d4a843", opacity: 0.25 }}
+                style={{ backgroundColor: "#D9A520", opacity: 0.25 }}
               />
               {/* Sparkle */}
-              <svg className="absolute -bottom-8 right-6 opacity-30" width="16" height="16" viewBox="0 0 16 16" fill="#d4a843">
+              <svg className="absolute -bottom-8 right-6 opacity-30" width="16" height="16" viewBox="0 0 16 16" fill="#D9A520">
                 <path d="M8 0 L9.5 6.5 L16 8 L9.5 9.5 L8 16 L6.5 9.5 L0 8 L6.5 6.5 Z" />
               </svg>
 

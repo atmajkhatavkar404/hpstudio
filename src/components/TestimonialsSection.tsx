@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
             style={{ fontFamily: "var(--font-family-playfair)" }}
           >
             <span style={{ color: "#0d0d0d" }}>What Our </span>
-            <span className="" style={{ color: "#d4a843" }}>Clients</span>
+            <span className="" style={{ color: "#D9A520" }}>Clients</span>
             <span style={{ color: "#0d0d0d" }}> Say</span>
           </h2>
         </div>
@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
           <div className="p-8 md:p-12 flex flex-col justify-center">
             <div className="flex gap-1 mb-5">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#d4a843">
+                <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#D9A520">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               ))}
@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
             </p>
 
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full flex items-center justify-center text-base font-bold" style={{ backgroundColor: "#d4a843", color: "#0d0d0d" }}>
+              <div className="w-11 h-11 rounded-full flex items-center justify-center text-base font-bold" style={{ backgroundColor: "#D9A520", color: "#0d0d0d" }}>
                 {t.initial}
               </div>
               <span className="text-lg" style={{ fontFamily: "var(--font-family-poppins)", color: "#0d0d0d" }}>
@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
               className="transition-all duration-300 rounded-full"
               style={
                 i === current
-                  ? { width: 32, height: 8, backgroundColor: "#d4a843" }
+                  ? { width: 32, height: 8, backgroundColor: "#D9A520" }
                   : { width: 8, height: 8, backgroundColor: "rgba(13,13,13,0.2)" }
               }
             />
@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
             href="https://google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-7 py-3 text-sm tracking-[0.15em] font-semibold uppercase transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3 text-sm tracking-[0.15em] font-semibold uppercase rounded-full transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: "#0d0d0d", color: "white" }}
           >
             <span className="mr-2">G</span>

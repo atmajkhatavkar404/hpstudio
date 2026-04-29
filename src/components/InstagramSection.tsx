@@ -51,14 +51,14 @@ export default function InstagramSection() {
             style={{ fontFamily: "var(--font-family-playfair)" }}
           >
             <span className="text-white">On </span>
-            <span className="" style={{ color: "#d4a843" }}>Instagram</span>
+            <span className="" style={{ color: "#D9A520" }}>Instagram</span>
           </h2>
           <a
             href="https://instagram.com/hp_studio_07"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm tracking-wider transition-colors duration-200"
-            style={{ color: "#d4a843" }}
+            style={{ color: "#D9A520" }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             @hp_studio_07
@@ -100,7 +100,7 @@ export default function InstagramSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm tracking-[0.15em] font-semibold uppercase border-2 rounded-full transition-all duration-300 hover:scale-105"
-            style={{ borderColor: "#d4a843", color: "#d4a843" }}
+            style={{ borderColor: "#D9A520", color: "#D9A520" }}
           >
             Follow on Instagram →
           </a>

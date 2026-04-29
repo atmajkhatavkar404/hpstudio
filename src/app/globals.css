@@ -119,7 +119,7 @@ html {
   --sidebar-border: oklch(0.3 0.01 250);
   --sidebar-ring: oklch(0.75 0.12 80);
 
-  --gold: #d4a843;
+  --gold: #D9A520;
   --gold-dark: #b8922e;
   --cream: #faf5eb;
   --dark: #0d0d0d;
@@ -181,7 +181,7 @@ html {
 
 /* Custom gold gradient */
 .gold-gradient {
-  background: linear-gradient(135deg, #d4a843 0%, #f0d078 50%, #d4a843 100%);
+  background: linear-gradient(135deg, #D9A520 0%, #f0d078 50%, #D9A520 100%);
 }
 
 /* Zoom animation for background images */

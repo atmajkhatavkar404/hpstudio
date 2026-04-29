@@ -44,7 +44,7 @@ export default function TeamSection() {
   return (
     <section ref={sectionRef} className="py-16 md:py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#faf5eb" }}>
       <div className="max-w-4xl mx-auto text-center">
-        <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-3" style={{ color: "#d4a843" }}>
+        <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-3" style={{ color: "#D9A520" }}>
           The People Behind The Lens
         </p>
         <h2
@@ -52,7 +52,7 @@ export default function TeamSection() {
           style={{ fontFamily: "var(--font-family-playfair)" }}
         >
           <span style={{ color: "#0d0d0d" }}>Our </span>
-          <span className="" style={{ color: "#d4a843" }}>Team</span>
+          <span className="" style={{ color: "#D9A520" }}>Team</span>
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-12 md:gap-20">
@@ -60,7 +60,7 @@ export default function TeamSection() {
             <div key={member.name} className="team-card flex flex-col items-center">
               <div
                 className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 mb-4"
-                style={{ borderColor: "#d4a843" }}
+                style={{ borderColor: "#D9A520" }}
               >
                 <img
                   src={member.img}

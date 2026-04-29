@@ -82,7 +82,7 @@ export default function PortfolioPage() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
           style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
         >
-          HP Studio <span className="" style={{ color: "#d4a843" }}>Portfolio</span>
+          HP Studio <span className="" style={{ color: "#D9A520" }}>Portfolio</span>
         </h1>
         <p className="mt-4 text-sm text-neutral-600 max-w-xl mx-auto">
           {manifest.total} photos across {albums.length} stories. Click any story to explore the full gallery.
@@ -96,8 +96,8 @@ export default function PortfolioPage() {
               onClick={() => setActive(cat)}
               className="px-5 py-2 text-sm tracking-wider border rounded-full transition-all duration-300"
               style={{
-                borderColor: active === cat ? "#d4a843" : "rgba(13,13,13,0.2)",
-                backgroundColor: active === cat ? "#d4a843" : "transparent",
+                borderColor: active === cat ? "#D9A520" : "rgba(13,13,13,0.2)",
+                backgroundColor: active === cat ? "#D9A520" : "transparent",
                 color: active === cat ? "#0d0d0d" : "#555",
               }}
             >

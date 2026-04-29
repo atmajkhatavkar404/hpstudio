@@ -81,10 +81,10 @@ export default function WhyChooseUs() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
               style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
             >
-              Meet <span className="" style={{ color: "#d4a843" }}>HP Studio</span>
+              Meet <span className="" style={{ color: "#D9A520" }}>HP Studio</span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed" style={{ color: "#444" }}>
-              At HP Studio, photography is more than just pictures — it's about
+              At HP Studio, photography is more than just pictures - it's about
               capturing real emotions, special moments, and timeless memories.
               From weddings to personal shoots, we focus on every detail to
               deliver photos that tell your story beautifully.
@@ -187,7 +187,7 @@ function StatItem({ target, suffix, label, started, delay }: {
     <div>
       <div
         className="text-4xl md:text-5xl font-bold mb-1"
-        style={{ fontFamily: "var(--font-family-playfair)", color: "#d4a843" }}
+        style={{ fontFamily: "var(--font-family-playfair)", color: "#D9A520" }}
       >
         {count}{suffix}
       </div>

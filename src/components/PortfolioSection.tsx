@@ -41,7 +41,7 @@ function ReelRow({ items, direction = "left", speed = 12 }: { items: GalleryItem
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <span className="text-xs font-medium tracking-wider uppercase" style={{ color: "#d4a843" }}>
+              <span className="text-xs font-medium tracking-wider uppercase" style={{ color: "#D9A520" }}>
                 {item.label}
               </span>
             </div>
@@ -73,12 +73,12 @@ export default function PortfolioSection() {
     <section id="portfolio" className="py-16 md:py-24" style={{ backgroundColor: "#0d0d0d" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 md:mb-14">
-          <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-3" style={{ color: "#d4a843" }}>
+          <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-3" style={{ color: "#D9A520" }}>
             Our Work
           </p>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold" style={{ fontFamily: "var(--font-family-playfair)" }}>
             <span className="text-white">Professional </span>
-            <span className="" style={{ color: "#d4a843" }}>Portfolio</span>
+            <span className="" style={{ color: "#D9A520" }}>Portfolio</span>
           </h2>
         </div>
 
@@ -89,8 +89,8 @@ export default function PortfolioSection() {
               onClick={() => setActive(cat)}
               className="px-5 py-2 text-sm tracking-wider border rounded-full transition-all duration-300"
               style={{
-                borderColor: active === cat ? "#d4a843" : "rgba(255,255,255,0.2)",
-                backgroundColor: active === cat ? "#d4a843" : "transparent",
+                borderColor: active === cat ? "#D9A520" : "rgba(255,255,255,0.2)",
+                backgroundColor: active === cat ? "#D9A520" : "transparent",
                 color: active === cat ? "#0d0d0d" : "rgba(255,255,255,0.7)",
               }}
             >

@@ -104,9 +104,9 @@ export default function HeroSection() {
       >
         <p
           className="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6"
-          style={{ color: "#d4a843" }}
+          style={{ color: "#fcfbfbff" }}
         >
-          Premium Photography Studio
+          Trusted By 150+ Clients
         </p>
 
         <h1
@@ -115,7 +115,7 @@ export default function HeroSection() {
         >
           <span className="text-white">We Capture Emotions,</span>
           <br />
-          <span className="" style={{ color: "#d4a843" }}>
+          <span className="" style={{ color: "#D9A520" }}>
             Not Just Photos
           </span>
         </h1>
@@ -130,7 +130,7 @@ export default function HeroSection() {
             href="#book"
             className="px-8 py-3 text-xs md:text-sm tracking-[0.15em] font-semibold uppercase rounded-full transition-all duration-300"
             style={{
-              backgroundColor: "#d4a843",
+              backgroundColor: "#D9A520",
               color: "#0d0d0d",
             }}
           >
@@ -142,8 +142,8 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-8 py-3 text-xs md:text-sm tracking-[0.15em] font-semibold uppercase border-2 rounded-full transition-all duration-300"
             style={{
-              borderColor: "#d4a843",
-              color: "#d4a843",
+              borderColor: "#D9A520",
+              color: "#D9A520",
             }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

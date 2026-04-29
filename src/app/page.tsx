@@ -35,7 +35,7 @@ export default function Index() {
   }, [router]);
 
   return (
-    <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#0d0d0d" }}>
+    <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#020202ff" }}>
       <Navbar />
       <HeroSection />
       <ServiceMarquee />

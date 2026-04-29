@@ -75,7 +75,7 @@ export default function ContactPage() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
             style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
           >
-            Contact <span className="" style={{ color: "#d4a843" }}>HP Studio</span>
+            Contact <span className="" style={{ color: "#D9A520" }}>HP Studio</span>
           </h1>
           <p className="mt-4 text-sm md:text-base text-neutral-600 max-w-xl mx-auto">
             We'd love to hear from you. Reach out to book a session, ask a question,
@@ -100,7 +100,7 @@ export default function ContactPage() {
               className="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4 transition-colors duration-300 group-hover:scale-110"
               style={{ backgroundColor: "rgba(212,168,67,0.12)" }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9A520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
             </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
               className="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4 transition-colors duration-300 group-hover:scale-110"
               style={{ backgroundColor: "rgba(212,168,67,0.12)" }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9A520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
@@ -171,7 +171,7 @@ export default function ContactPage() {
               className="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4 transition-colors duration-300 group-hover:scale-110"
               style={{ backgroundColor: "rgba(212,168,67,0.12)" }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9A520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
@@ -200,7 +200,7 @@ export default function ContactPage() {
               className="text-2xl md:text-3xl font-bold mb-2"
               style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
             >
-              Send an <span className="" style={{ color: "#d4a843" }}>Enquiry</span>
+              Send an <span className="" style={{ color: "#D9A520" }}>Enquiry</span>
             </h2>
             <p className="text-sm mb-6" style={{ color: "#999" }}>
               Fill in the form and we'll get back to you on WhatsApp.
@@ -223,7 +223,7 @@ export default function ContactPage() {
                     border: "1px solid rgba(13,13,13,0.1)",
                     color: "#0d0d0d",
                     // @ts-expect-error ring color
-                    "--tw-ring-color": "#d4a843",
+                    "--tw-ring-color": "#D9A520",
                   }}
                 />
               </div>
@@ -294,7 +294,7 @@ export default function ContactPage() {
                 type="submit"
                 className="mt-2 w-full py-3.5 text-xs tracking-[0.2em] font-bold uppercase rounded-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                 style={{
-                  backgroundColor: "#d4a843",
+                  backgroundColor: "#D9A520",
                   color: "#0d0d0d",
                   boxShadow: "0 4px 15px rgba(212, 168, 67, 0.3)",
                 }}
@@ -316,7 +316,7 @@ export default function ContactPage() {
                 style={{ backgroundColor: "#e8ddc8" }}
               >
                 <div className="text-center">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d4a843" strokeWidth="1.5" className="mx-auto mb-3">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D9A520" strokeWidth="1.5" className="mx-auto mb-3">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>
@@ -331,7 +331,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-3 px-5 py-2 text-[10px] tracking-[0.2em] font-bold uppercase rounded-full transition-all duration-300 hover:scale-105"
-                    style={{ backgroundColor: "#d4a843", color: "#0d0d0d" }}
+                    style={{ backgroundColor: "#D9A520", color: "#0d0d0d" }}
                   >
                     Open in Maps
                   </a>
@@ -349,7 +349,7 @@ export default function ContactPage() {
                 style={{ fontFamily: "var(--font-family-playfair)" }}
               >
                 <span className="text-white">Working </span>
-                <span className="" style={{ color: "#d4a843" }}>Hours</span>
+                <span className="" style={{ color: "#D9A520" }}>Hours</span>
               </h3>
 
               <div className="space-y-3">
@@ -360,12 +360,12 @@ export default function ContactPage() {
                 ].map((item) => (
                   <div key={item.day} className="flex items-center justify-between border-b pb-3" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                     <span className="text-sm text-white/60">{item.day}</span>
-                    <span className="text-sm font-medium" style={{ color: "#d4a843" }}>{item.time}</span>
+                    <span className="text-sm font-medium" style={{ color: "#D9A520" }}>{item.time}</span>
                   </div>
                 ))}
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-white/60">Outdoor Shoots</span>
-                  <span className="text-sm font-medium" style={{ color: "#d4a843" }}>By Appointment</span>
+                  <span className="text-sm font-medium" style={{ color: "#D9A520" }}>By Appointment</span>
                 </div>
               </div>
 

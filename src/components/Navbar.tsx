@@ -46,7 +46,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-1">
             <span className="font-bold text-xl md:text-2xl tracking-wider" style={{ fontFamily: "var(--font-family-playfair)" }}>
               <span className="text-white">HP </span>
-              <span style={{ color: "#d4a843" }}>STUDIO</span>
+              <span style={{ color: "#D9A520" }}>STUDIO</span>
             </span>
           </Link>
 
@@ -57,7 +57,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className="text-white/80 hover:text-white text-sm tracking-[0.15em] font-medium transition-colors duration-200"
-                style={{ color: pathname === link.href ? "#d4a843" : undefined }}
+                style={{ color: pathname === link.href ? "#D9A520" : undefined }}
               >
                 {link.label}
               </Link>
@@ -67,14 +67,14 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 px-6 py-3 text-sm tracking-[0.15em] font-semibold border-2 rounded-full transition-all duration-200 hover:scale-[1.05]"
-              style={{ borderColor: "#d4a843", color: "#d4a843", backgroundColor: "transparent" }}
+              style={{ borderColor: "#D9A520", color: "#D9A520", backgroundColor: "transparent" }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#d4a843";
+                e.currentTarget.style.backgroundColor = "#D9A520";
                 e.currentTarget.style.color = "#0d0d0d";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = "#d4a843";
+                e.currentTarget.style.color = "#D9A520";
               }}
             >
               BOOK NOW
@@ -104,7 +104,7 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="text-white/80 hover:text-white text-base tracking-[0.15em] font-medium touch-friendly"
-                style={{ color: pathname === link.href ? "#d4a843" : undefined }}
+                style={{ color: pathname === link.href ? "#D9A520" : undefined }}
               >
                 {link.label}
               </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="mt-2 w-full max-w-xs px-6 py-3 text-sm tracking-[0.15em] font-semibold border-2 rounded-full"
-              style={{ borderColor: "#d4a843", color: "#d4a843" }}
+              style={{ borderColor: "#D9A520", color: "#D9A520" }}
             >
               BOOK NOW
             </a>

@@ -168,8 +168,8 @@ export default function StoryPage() {
                   onClick={() => { setActiveEvent(ev); setPage(1); }}
                   className="px-5 py-2 tracking-widest text-[10px] md:text-xs font-semibold uppercase border rounded-full transition-all duration-300 hover:scale-105"
                   style={{
-                    borderColor: activeEvent === ev ? "#d4a843" : "rgba(13,13,13,0.2)",
-                    backgroundColor: activeEvent === ev ? "#d4a843" : "transparent",
+                    borderColor: activeEvent === ev ? "#D9A520" : "rgba(13,13,13,0.2)",
+                    backgroundColor: activeEvent === ev ? "#D9A520" : "transparent",
                     color: activeEvent === ev ? "#0d0d0d" : "#555",
                   }}
                 >

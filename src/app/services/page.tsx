@@ -113,7 +113,7 @@ const services = [
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
           style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
         >
-          Our Service <span className="" style={{ color: "#d4a843" }}>&</span> Pricing
+          Our Service <span className="" style={{ color: "#D9A520" }}>&</span> Pricing
         </h1>
         <p className="mt-4 max-w-xl mx-auto text-sm md:text-base" style={{ color: "#555" }}>
           Cinematic packages tailored to your story. Tap any card to enquire.
@@ -128,7 +128,7 @@ const services = [
               className="svc-card group relative bg-white rounded-2xl p-7 md:p-8 flex flex-col transition-all duration-500 hover:-translate-y-2"
               style={{ boxShadow: "0 10px 40px -15px rgba(0,0,0,0.15)" }}
             >
-              <div className="absolute top-0 left-7 right-7 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(90deg,#d4a843,#f0d078)" }} />
+              <div className="absolute top-0 left-7 right-7 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(90deg,#D9A520,#f0d078)" }} />
 
               <h3
                 className="text-2xl md:text-3xl font-bold mb-3"
@@ -143,7 +143,7 @@ const services = [
               <ul className="space-y-2 mb-7 flex-1">
                 {s.items.map((it) => (
                   <li key={it} className="flex items-start gap-2 text-sm" style={{ color: "#333" }}>
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#d4a843" }} />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#D9A520" }} />
                     <span>{it}</span>
                   </li>
                 ))}
