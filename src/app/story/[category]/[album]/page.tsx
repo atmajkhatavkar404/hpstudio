@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState, useEffect, useRef, useMemo } from "react";
 import { gsap } from "gsap";
@@ -21,70 +21,45 @@ import {
 } from "../../../../lib/images";
 
 export default function StoryPage() {
-  const { category, album } = useParams() as { category: string; album: string };
+  const { category, album } = useParams();
   const manifest = useManifest();
   const cat = category as CategoryKey;
-  const videoSrc = manifest.categories[cat]?.albums[album]?.video || manifest.categories[cat]?.video || "/wedding-video.mp4";
-  const heroRef = useRef<HTMLDivElement>(null);
-  const heroBgRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+  const albumSlug = album as string;
 
-  const albumDetails = useMemo(() => getAlbumDetails(manifest, cat, album), [manifest, cat, album]);
-  const [activeEvent, setActiveEvent] = useState<string>("All");
+  const albumDetails = useMemo(() => getAlbumDetails(manifest, cat, albumSlug), [manifest, cat, albumSlug]);
+  const displayName = useMemo(() => albumDisplayName(cat, albumSlug), [cat, albumSlug]);
+
+  const allPhotos = useMemo(() => {
+    if (!albumDetails) return [];
+    const photos: string[] = [];
+    photos.push(...(albumDetails.photos || []));
+    Object.values(albumDetails.events || {}).forEach((eventPhotos) => {
+      photos.push(...eventPhotos);
+    });
+    return photos;
+  }, [albumDetails]);
 
   const eventsList = useMemo(() => {
     if (!albumDetails?.events) return [];
     return Object.keys(albumDetails.events);
   }, [albumDetails]);
 
-  const allPhotos = useMemo(() => {
-    if (!albumDetails) return [];
-    const photos: string[] = [];
-    if (activeEvent === "All") {
-      photos.push(...(albumDetails.photos || []));
-      if (albumDetails.events) {
-        for (const evphotos of Object.values(albumDetails.events)) {
-          photos.push(...evphotos);
-        }
-      }
-    } else if (albumDetails.events && albumDetails.events[activeEvent]) {
-      photos.push(...albumDetails.events[activeEvent]);
+  const categories = ["All", ...eventsList];
+
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [showAll, setShowAll] = useState(false);
+
+  const galleryImages = useMemo(() => {
+    if (activeCategory === "All") {
+      return allPhotos;
+    } else {
+      return albumDetails?.events?.[activeCategory] || [];
     }
-    return photos;
-  }, [albumDetails, activeEvent]);
+  }, [activeCategory, allPhotos, albumDetails]);
 
-  const [page, setPage] = useState(1);
-  const visiblePhotos = useMemo(
-    () => allPhotos.slice(0, page * IMAGES_PER_PAGE),
-    [allPhotos, page],
-  );
-  const hasMore = visiblePhotos.length < allPhotos.length;
-
-  const displayName = useMemo(() => albumDisplayName(album, cat), [album, cat]);
-
-  // Hero cover photos (up to 4 for the collage)
-  const heroPhotos = useMemo(() => {
-    if (!albumDetails) return [];
-    const photos = [...(albumDetails.photos || [])];
-    if (albumDetails.events) {
-      for (const evphotos of Object.values(albumDetails.events)) {
-        photos.push(...evphotos);
-      }
-    }
-    return photos.slice(0, 4);
-  }, [albumDetails]);
-
-  // GSAP animations
-  useEffect(() => {
-    if (heroRef.current) {
-      gsap.fromTo(
-        heroRef.current.children,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power3.out" },
-      );
-    }
-  }, []);
+  const visibleImages = showAll
+    ? galleryImages
+    : galleryImages.slice(0, 12);
 
   // Parallax Scroll Effect for Hero Background
   useEffect(() => {
@@ -128,203 +103,83 @@ export default function StoryPage() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <div className="overflow-x-hidden" style={{ backgroundColor: "white" }}>
+    <div className="overflow-x-hidden" style={{ backgroundColor: "#f6f1e8" }}>
       <Navbar />
+      <main className="min-h-screen px-4 md:px-8 py-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Hero Image */}
+          <div className="rounded-xl overflow-hidden shadow-sm">
+            <Image
+              src={allPhotos[0] || "/images/wedding-couple-By2WaDyA.jpg"}
+              alt="Couple Hero"
+              width={1600}
+              height={900}
+              className="w-full h-[300px] md:h-[550px] object-cover"
+              priority
+            />
+          </div>
 
-      {/* ─── Video Section ─── */}
-      <section className="pt-8 md:pt-12 pb-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <video
-            className="w-full h-[500px] object-cover rounded-xl"
-            src={videoSrc}
-            controls
-            autoPlay
-            muted
-            poster="/images/wedding-couple-By2WaDyA.jpg"
-            onError={() => console.log('Video failed to load:', videoSrc)}
-          />
-        </div>
-      </section>
+          {/* Title Section */}
+          <div className="text-center mt-8">
+            <h1 className="text-4xl md:text-6xl font-serif font-semibold text-[#3d332d]">
+              {displayName}
+            </h1>
 
-      {/* ─── Album Details Section ─── */}
-      <section className="pt-4 md:pt-8 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-2" style={{ color: "#b8922e" }}>
-            {CATEGORY_LABELS[cat] ?? category}
-          </p>
-          <h1
-            className="text-4xl md:text-6xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-family-playfair)", color: "#0d0d0d" }}
-          >
-            {displayName}
-          </h1>
+            <p className="mt-3 text-[#5c5149] text-base md:text-xl font-medium max-w-2xl mx-auto">
+              "A union written in golden hour light — every glance,
+              every laugh, captured forever."
+            </p>
 
-          {/* ─── Events Filter ─── */}
-          {eventsList.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-3 mt-4 mb-2">
-              {["All", ...eventsList].map((ev) => (
+            {/* Category Buttons */}
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              {categories.map((item) => (
                 <button
-                  key={ev}
-                  onClick={() => { setActiveEvent(ev); setPage(1); }}
-                  className="px-5 py-2 tracking-widest text-[10px] md:text-xs font-semibold uppercase border rounded-full transition-all duration-300 hover:scale-105"
-                  style={{
-                    borderColor: activeEvent === ev ? "#d4a843" : "rgba(13,13,13,0.2)",
-                    backgroundColor: activeEvent === ev ? "#d4a843" : "transparent",
-                    color: activeEvent === ev ? "#0d0d0d" : "#555",
-                  }}
+                  key={item}
+                  onClick={() => setActiveCategory(item)}
+                  className={`px-5 py-2 rounded-full border text-sm font-medium transition-all duration-300
+                    ${
+                      activeCategory === item
+                        ? "bg-[#f1d58a] border-[#f1d58a] text-black"
+                        : "bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
+                    }`}
                 >
-                  {ev === "All" ? "All Photos" : ev.replace(/-/g, " ")}
+                  {item === "All" ? "All Photos" : item.replace(/-/g, " ")}
                 </button>
               ))}
             </div>
-          )}
+          </div>
 
-          <p className="mt-4 text-neutral-600 text-xs md:text-sm tracking-widest">
-            {allPhotos.length} TOTAL PHOTOS
-          </p>
-        </div>
-      </section>
-
-
-
-      {/* ─── Photo Grid with Load More ─── */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 pt-8">
-        <div
-          ref={gridRef}
-          className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
-        >
-          {visiblePhotos.map((src, i) => (
-            <div
-              key={`${src}-${i}`}
-              className="photo-card group relative overflow-hidden rounded-xl cursor-pointer will-change-transform"
-              style={{ aspectRatio: "425/475", boxShadow: "0 4px 20px -8px rgba(0,0,0,0.15)" }}
-              onClick={(e) => {
-                gsap.to(e.currentTarget, {
-                  scale: 0.95,
-                  duration: 0.1,
-                  yoyo: true,
-                  repeat: 1,
-                  ease: "power2.inOut",
-                  onComplete: () => setLightbox(i),
-                });
-              }}
-            >
-              <img
-                src={src}
-                alt={`${displayName} — photo ${i + 1}`}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-              {/* Zoom icon on hover */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="M21 21l-4.35-4.35" />
-                  <path d="M11 8v6M8 11h6" />
-                </svg>
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+            {visibleImages.map((img, index) => (
+              <div
+                key={index}
+                className="overflow-hidden rounded-md group"
+              >
+                <Image
+                  src={img}
+                  alt={`Gallery ${index + 1}`}
+                  width={500}
+                  height={700}
+                  className="w-full h-[220px] md:h-[320px] object-cover group-hover:scale-105 transition duration-500"
+                />
               </div>
+            ))}
+          </div>
+
+          {/* Show More Button */}
+          {!showAll && visibleImages.length >= 12 && (
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={() => setShowAll(true)}
+                className="bg-[#1f1f1f] text-white px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-all duration-300 font-semibold tracking-wide"
+              >
+                SHOW MORE
+              </button>
             </div>
-          ))}
-        </div>
-
-        {/* Load More button */}
-        {hasMore && (
-          <div className="text-center mt-10">
-            <button
-              onClick={() => setPage((p) => p + 1)}
-              className="px-10 py-3 text-xs tracking-[0.2em] font-bold uppercase rounded-full transition-all duration-300 hover:scale-105"
-              style={{
-                backgroundColor: "#0d0d0d",
-                color: "white",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-              }}
-            >
-              Load More ({allPhotos.length - visiblePhotos.length} remaining)
-            </button>
-          </div>
-        )}
-
-        {allPhotos.length === 0 && manifest.total > 0 && (
-          <p className="text-center text-neutral-500 py-12">
-            No photos found for this album.
-          </p>
-        )}
-
-        {/* Back to portfolio */}
-        <div className="text-center mt-8">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 text-sm tracking-wider transition-colors duration-200"
-            style={{ color: "#b8922e" }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Back to Portfolio
-          </Link>
-        </div>
-      </section>
-
-      {/* ─── Lightbox ─── */}
-      {lightbox !== null && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center"
-          style={{ backgroundColor: "rgba(0,0,0,0.92)" }}
-          onClick={() => setLightbox(null)}
-        >
-          {/* Close */}
-          <button
-            className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors"
-            style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
-            onClick={() => setLightbox(null)}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          </button>
-
-          {/* Prev */}
-          {lightbox > 0 && (
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors"
-              style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
-              onClick={(e) => { e.stopPropagation(); setLightbox(lightbox - 1); }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </button>
           )}
-
-          {/* Next */}
-          {lightbox < visiblePhotos.length - 1 && (
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors"
-              style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
-              onClick={(e) => { e.stopPropagation(); setLightbox(lightbox + 1); }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </button>
-          )}
-
-          {/* Image */}
-          <img
-            src={visiblePhotos[lightbox]}
-            alt={`${displayName} — photo ${lightbox + 1}`}
-            className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-
-          {/* Counter */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-xs tracking-wider">
-            {lightbox + 1} / {visiblePhotos.length}
-          </div>
         </div>
-      )}
-
+      </main>
       <Footer />
       <WhatsAppButton />
     </div>
